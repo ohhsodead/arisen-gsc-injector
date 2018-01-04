@@ -1,6 +1,6 @@
 ﻿using ChreneLib;
 
-namespace AtomicToolGSC
+namespace atomic_tool
 {
     partial class frmInjector
     {
@@ -61,7 +61,7 @@ namespace AtomicToolGSC
             this.lblTitleModMenuZM = new System.Windows.Forms.Label();
             this.cmboItemsGscMenusZM = new System.Windows.Forms.ComboBox();
             this.cmboItemsGscMenusPathsZM = new System.Windows.Forms.ComboBox();
-            this.txtChangeName = new CueTextBox();
+            this.txtChangeName = new ChreneLib.Controls.TextBoxes.CTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgBanner)).BeginInit();
             this.SuspendLayout();
             // 
@@ -323,7 +323,7 @@ namespace AtomicToolGSC
             // 
             // imgBanner
             // 
-            this.imgBanner.Image = global::AtomicToolGSC.Properties.Resources.Atomic_Menu;
+            this.imgBanner.Image = global::atomic_tool.Properties.Resources.Atomic_Menu;
             this.imgBanner.Location = new System.Drawing.Point(19, 32);
             this.imgBanner.Name = "imgBanner";
             this.imgBanner.Size = new System.Drawing.Size(295, 63);
@@ -445,14 +445,17 @@ namespace AtomicToolGSC
             // txtChangeName
             // 
             this.txtChangeName.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.txtChangeName.Cue = "Change Name...";
             this.txtChangeName.Enabled = false;
-            this.txtChangeName.Font = new System.Drawing.Font("Segoe UI", 8.75F);
+            this.txtChangeName.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtChangeName.Location = new System.Drawing.Point(9, 359);
             this.txtChangeName.MaxLength = 16;
             this.txtChangeName.Name = "txtChangeName";
             this.txtChangeName.Size = new System.Drawing.Size(272, 23);
             this.txtChangeName.TabIndex = 10;
+            this.txtChangeName.WaterMark = "Change Name...";
+            this.txtChangeName.WaterMarkActiveForeColor = System.Drawing.Color.DimGray;
+            this.txtChangeName.WaterMarkFont = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtChangeName.WaterMarkForeColor = System.Drawing.Color.Gray;
             // 
             // frmInjector
             // 
@@ -512,7 +515,7 @@ namespace AtomicToolGSC
         private System.Windows.Forms.ComboBox cmboItemsGscMenus;
         private CButtonLib.CButton btnRestoreGsc;
         private System.Windows.Forms.ComboBox cmboItemsGscMenusPaths;
-        private CueTextBox txtChangeName;
+        private ChreneLib.Controls.TextBoxes.CTextBox txtChangeName;
         private System.Windows.Forms.Label lblTitleModMenu;
         private System.Windows.Forms.ComboBox cmboItemsGscModesPaths;
         private System.Windows.Forms.ComboBox cmboItemsGscModes;

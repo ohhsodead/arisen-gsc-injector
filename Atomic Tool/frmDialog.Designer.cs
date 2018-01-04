@@ -1,4 +1,4 @@
-﻿namespace AtomicToolGSC
+﻿namespace atomic_tool
 {
     partial class frmDialog
     {

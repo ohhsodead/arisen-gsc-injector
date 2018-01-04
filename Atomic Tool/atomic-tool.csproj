@@ -7,8 +7,8 @@
     <ProjectGuid>{471A20D8-E259-4002-9FC8-79252BDBA6A8}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AtomicToolGSC</RootNamespace>
-    <AssemblyName>Atomic Tool GSC</AssemblyName>
+    <RootNamespace>atomic_tool</RootNamespace>
+    <AssemblyName>Atomic Tool</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -81,9 +81,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CueTextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="frmDialog.cs">
       <SubType>Form</SubType>
     </Compile>

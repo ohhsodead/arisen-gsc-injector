@@ -1,4 +1,4 @@
-﻿namespace AtomicToolGSC
+﻿namespace atomic_tool
 {
     partial class frmInformation
     {
@@ -97,7 +97,7 @@
             // 
             // imgInformation
             // 
-            this.imgInformation.Image = global::AtomicToolGSC.Properties.Resources.Info_Icon;
+            this.imgInformation.Image = global::atomic_tool.Properties.Resources.Info_Icon;
             this.imgInformation.Location = new System.Drawing.Point(12, 12);
             this.imgInformation.Name = "imgInformation";
             this.imgInformation.Size = new System.Drawing.Size(40, 40);

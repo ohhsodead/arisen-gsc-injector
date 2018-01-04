@@ -11,10 +11,9 @@ using PS3Lib;
 using System.Net;
 using System.Threading;
 using System.IO;
-using AtomicToolGSC;
 using System.Diagnostics;
 
-namespace AtomicToolGSC
+namespace atomic_tool
 {
     public partial class frmInjector : Form
     {

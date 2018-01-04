@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace AtomicToolGSC
+namespace atomic_tool
 {
     public partial class frmDialog : Form
     {

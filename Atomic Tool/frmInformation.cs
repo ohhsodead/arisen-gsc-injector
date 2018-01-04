@@ -5,7 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Windows.Forms;
 
-namespace AtomicToolGSC
+namespace atomic_tool
 {
     public partial class frmInformation : Form
     {
