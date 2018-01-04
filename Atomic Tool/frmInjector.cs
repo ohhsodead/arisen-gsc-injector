@@ -277,11 +277,29 @@ namespace atomic_tool
             WebClient client = new WebClient();
             Stream stream = client.OpenRead("https://dl.dropbox.com/s/12q2xkdkzo6kek4/atomic-version.txt?dl=0");
             StreamReader reader = new StreamReader(stream);
-            string newestversion = reader.ReadToEnd();
-            string currentversion = Application.ProductVersion;
+            Version newVersion = new Version(reader.ReadToEnd());
+            Version curVersion = System.Reflection.Assembly.GetExecutingAssembly().GetName().Version;
 
-            if (newestversion == currentversion)
+            if (curVersion.CompareTo(newVersion) < 0)
             {
+                PopupBox.lblStatus.Text = "There is a new update available (" + newVersion.ToString() + "";
+                PopupBox.Text = "Update Available";
+                PopupBox.ShowDialog(this);
+                try
+                {
+                    Process.Start(Application.StartupPath + @"\Atomic Tool Auto Updater.exe");
+                    Application.Exit();
+                }
+                catch (Exception ex)
+                {
+                    PopupBox.lblStatus.Text = ex.Message;
+                    PopupBox.Text = "Unable to update tool";
+                    PopupBox.ShowDialog(this);
+                    Application.Restart();
+                }
+            }
+            else
+            { 
                 try
                 {
                     if (Directory.Exists(GscMods))
@@ -388,22 +406,6 @@ namespace atomic_tool
                 {
                     PopupBox.lblStatus.Text = ex.Message;
                     PopupBox.Text = "Unable to download pointers";
-                    PopupBox.ShowDialog(this);
-                    Application.Restart();
-                }
-            }
-            else
-            {
-                MessageBox.Show("There is a new update available.");
-                try
-                {
-                    Process.Start(Application.StartupPath + @"\Atomic Tool Auto Updater.exe");
-                    Application.Exit();
-                }
-                catch (Exception ex)
-                {
-                    PopupBox.lblStatus.Text = ex.Message;
-                    PopupBox.Text = "Unable to update tool";
                     PopupBox.ShowDialog(this);
                     Application.Restart();
                 }

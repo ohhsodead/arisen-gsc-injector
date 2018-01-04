@@ -58,14 +58,13 @@
   <PropertyGroup />
   <ItemGroup>
     <Reference Include="CButtonLib">
-      <HintPath>..\..\..\- Plugins\CButton\CButton\bin\Debug\CButtonLib.dll</HintPath>
+      <HintPath>..\references\CButtonLib.dll</HintPath>
     </Reference>
     <Reference Include="ChreneLib">
-      <HintPath>..\..\..\..\- Plugins\ChreneLib_DLL\ChreneLib.dll</HintPath>
+      <HintPath>..\references\ChreneLib.dll</HintPath>
     </Reference>
-    <Reference Include="PS3Lib, Version=4.4.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\..\Desktop\x\CFW\CCAPI 2.60 to 2.70\CcApi_package_2.70_Rev4_dev\PS3Lib.dll</HintPath>
+    <Reference Include="PS3Lib">
+      <HintPath>..\references\PS3Lib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
