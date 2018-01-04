@@ -1,7 +1,7 @@
 ## Atomic Tool
-Black Ops II GSC Injector for CFW.
+Basic server-driven Call of Duty: Black Ops II Script injector for the PlayStation 3's running Custom Firmware. Supports Multiplayer & Zombies.
 
-## What is it?
-A small tool that I've been working on for a little while now. Nothing special really. It basically allows you to inject and switch to and from GSC mods for Black Ops II. Just like any other GSC tool.
+## Add Your Own Mods
+Adding your gsc mods is simple, but requires a few things first. Please ensure that you've already opened the app previously so that the database directories can be installed to your Documents, and that your desired gsc mods are compiled, preferably using [GSC Studio by iMCSx](https://gscstudio.imcsx.co). When you're ready to go, browse to Documents\Atomic Tool GSC and select either of the three folders for which to find your mods in the app, create a new folder for your mods (any name) and copy your gsc files inside it (no folders, only the files that make up the gsc which must be named to their appropriate gsc, e.g. '_development_dvars.gsc', 'rank_.gsc', etc. That's it, restart the app if it's already open and it will find them.
 
-Except this downloads the latest database that contains all the GSC mods you see the in the app stored on a private server. So, there's no need for you to update the app when there's new mods available, they're downloaded to your Documents folder. I will constantly be updating the database with more mods, let me know if you want to see any specific ones on there.
+Alternatively, you can request for them to be uploaded to the server for others to access/use. Just open an issue and I'll put it up.
