@@ -1,7 +1,44 @@
-## Atomic Tool
-Basic server-driven Call of Duty: Black Ops II Script injector for the PlayStation 3's running Custom Firmware. Supports Multiplayer & Zombies.
+<h1 align="left">AtomicX</h1>
 
-## Add Your Own Mods
-Adding your gsc mods is simple, but requires a few things first. Please ensure that you've already opened the app previously so that the database directories can be installed to your Documents, and that your desired gsc mods are compiled, preferably using [GSC Studio by iMCSx](https://gscstudio.imcsx.co). When you're ready to go, browse to Documents\Atomic Tool GSC and select either of the three folders for which to find your mods in the app, create a new folder for your mods (any name) and copy your gsc files inside it (no folders, only the files that make up the gsc which must be named to their appropriate gsc, e.g. '_development_dvars.gsc', 'rank_.gsc', etc. That's it, restart the app if it's already open and it will find them.
+A basic server-driven Call of Duty: Black Ops II GSC injector for the PlayStation 3 running Custom Firmware. Supports both Multiplayer & Zombies.
 
-Alternatively, you can request for them to be uploaded to the server for others to access/use. Just open an issue and I'll put it up.
+![Main Form](https://github.com/ohhsoash/AtomicX/blob/master/.screenshots/demo/MainForm.png?raw=true) 
+
+**Comments, ideas, suggestions?** You can contact [me](https://github.com/ohhsodead/) via [Email](mailto:bettercodes1@gmail.com).
+
+## Features
+* Fast, lightweight and simple to use
+* Connect using CCAPI or TMAPI
+* Browse a large database of GSC mods
+* Complete with info, creator, version, etc.
+* Filter by name, mp/zm and mod type
+* Inject and un-inject mods to game
+* Download mods to your computer
+
+## Requirements
+* An internet connection
+* NET Framework 4.6.2
+* PlayStation 3 with MFW
+
+## Installation
+Download and run the latest version of the Windows installer, "AtomicX.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/AtomicX/releases/latest) page.
+ 
+## Contributing
+You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
+ 
+## Requesting Mods
+I know that all gsc mods are available, you can use the "REQUEST MODS" feature to create an issue with the details and they will be submitted to our database.
+ 
+## Credits / Libraries
+- Appropriate Authors of all Mods
+- [DarkUI for Winforms](https://github.com/RobinPerris/DarkUI)
+- [Newtonsoft.Json](https://www.newtonsoft.com/json)
+- [Apache log4net](https://logging.apache.org/log4net/)
+- [SyGnUs (GSC Help)](https://github.com/SyGnUs)
+- [TheHiddenHour (GSC Help)](https://github.com/TheHiddenHour)
+ 
+## Disclaimer
+I can accept no responsibility for any damage you cause to your system by using this tool. Follow the instructions so you shouldn't have any issues.
+
+## License
+This project is released under the GNU General Public License v3.
