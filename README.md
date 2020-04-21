@@ -2,7 +2,7 @@
 
 A basic server-driven Call of Duty: Black Ops II GSC injector for the PlayStation 3 running Custom Firmware. Supports both Multiplayer & Zombies.
 
-![Main Form](https://github.com/ohhsoash/AtomicX/blob/master/.screenshots/demo/MainForm.png?raw=true) 
+![Main Form](https://github.com/ohhsodead/AtomicX/blob/master/.screenshots/demo/MainForm.png?raw=true) 
 
 **Comments, ideas, suggestions?** You can contact [me](https://github.com/ohhsodead/) via [Email](mailto:bettercodes1@gmail.com).
 
