@@ -27,7 +27,7 @@ Download and run the latest version of the Windows installer, "AtomicX.Installer
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
  
 ## Requesting Mods
-I know that all gsc mods are available, you can use the "REQUEST MODS" feature to create an issue with the details and they will be submitted to our database.
+I know that all gsc mods aren't currently available, you can use the "REQUEST MODS" at the top of the app to create an issue with the details and they will be submitted to our database.
  
 ## Credits / Libraries
 - Appropriate Authors of all Mods
