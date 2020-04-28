@@ -1,6 +1,6 @@
 <h1 align="left">AtomicX</h1>
 
-A basic server-driven Call of Duty: Black Ops II GSC injector for the PlayStation 3 running Custom Firmware. Supports both Multiplayer & Zombies.
+A basic server-driven Call of Duty: Black Ops II GSC injector. Supports Multiplayer & Zombies.
 
 ![Main Form](https://github.com/ohhsodead/AtomicX/blob/master/.screenshots/demo/MainForm.png?raw=true) 
 
@@ -8,7 +8,7 @@ A basic server-driven Call of Duty: Black Ops II GSC injector for the PlayStatio
 
 ## Features
 * Fast, lightweight and simple to use
-* Connect using CCAPI or TMAPI
+* Connect using CCAPI, TMAPI or XRPC
 * Browse a large database of GSC mods
 * Complete with info, creator, version, etc.
 * Filter by name, mp/zm and mod type
@@ -34,8 +34,9 @@ I know that all gsc mods aren't currently available, you can use the "REQUEST MO
 - [DarkUI for Winforms](https://github.com/RobinPerris/DarkUI)
 - [Newtonsoft.Json](https://www.newtonsoft.com/json)
 - [Apache log4net](https://logging.apache.org/log4net/)
-- [SyGnUs (GSC Help)](https://github.com/SyGnUs)
-- [TheHiddenHour (GSC Help)](https://github.com/TheHiddenHour)
+- [SyGnUs (GSC Offsets Help)](https://github.com/SyGnUs)
+- [TheHiddenHour (GSC Offsets Help)](https://github.com/TheHiddenHour)
+- [Serious (GSC Offsets Help)](https://www.youtube.com/user/anthonything)
  
 ## Disclaimer
 I can accept no responsibility for any damage you cause to your system by using this tool. Follow the instructions so you shouldn't have any issues.
