@@ -1,6 +1,6 @@
 <h1 align="left">AtomicX</h1>
 
-A basic server-driven Call of Duty: Black Ops II GSC injector for the PlayStation 3 running Custom Firmware. Supports both Multiplayer & Zombies.
+A basic server-driven Call of Duty: Black Ops II GSC injector. Supports Multiplayer & Zombies.
 
 ![Main Form](https://github.com/ohhsodead/AtomicX/blob/master/.screenshots/demo/MainForm.png?raw=true) 
 
