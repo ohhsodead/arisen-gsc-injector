@@ -10,6 +10,7 @@ using System.IO.Compression;
 using System.Net;
 using System.Net.Http;
 using System.Reflection;
+using System.Runtime.InteropServices;
 using System.Windows.Forms;
 
 namespace AtomicX.Extensions
@@ -19,7 +20,7 @@ namespace AtomicX.Extensions
         /// <summary>
         ///     Application user's data roaming directory
         /// </summary>
-        internal static string AppDataPath { get; } = $@"{System.Windows.Forms.Application.UserAppDataPath}\";
+        internal static string AppDataPath { get; } = $@"{Application.UserAppDataPath}\";
 
         /// <summary>
         ///     Web URL pointing to the project repo hosted on GitHub
@@ -37,7 +38,18 @@ namespace AtomicX.Extensions
         /// <returns></returns>
         public static Version CurrentVersion { get; } = Assembly.GetExecutingAssembly().GetName().Version;
 
-        
+        [DllImport("wininet.dll")]
+        private extern static bool InternetGetConnectedState(out int Description, int ReservedValue);
+
+        /// <summary>
+        ///     
+        /// </summary>
+        /// <returns></returns>
+        public static bool IsConnectedToInternet()
+        {
+            return InternetGetConnectedState(out _, 0);
+        }
+
         /// <summary>
         ///     
         /// </summary>
@@ -102,11 +114,11 @@ namespace AtomicX.Extensions
         ///     Download and return the gsc multiplayer dump data
         /// </summary>
         /// <returns></returns>
-        internal static GscData GetGscMultiplayerData()
+        internal static GscData GetGscMultiplayerDataPS3()
         {
             using (HttpClient client = new HttpClient())
             {
-                using (HttpResponseMessage response = client.GetAsync("https://dl.dropbox.com/s/kepaclyfif9t6qr/gsc-dump-mp.json?raw=true").Result)
+                using (HttpResponseMessage response = client.GetAsync("https://dl.dropbox.com/s/kepaclyfif9t6qr/ps3-gsc-dump-mp.json?raw=true").Result)
                 {
                     if (response.StatusCode != HttpStatusCode.OK)
                     {
@@ -131,11 +143,69 @@ namespace AtomicX.Extensions
         ///     Download and return the gsc zombies dump data
         /// </summary>
         /// <returns></returns>
-        internal static GscData GetGscZombiesData()
+        internal static GscData GetGscZombiesDataPS3()
         {
             using (HttpClient client = new HttpClient())
             {
-                using (HttpResponseMessage response = client.GetAsync("https://dl.dropbox.com/s/1bpjh455amuphq7/gsc-dump-zm.json?raw=true").Result)
+                using (HttpResponseMessage response = client.GetAsync("https://dl.dropbox.com/s/1bpjh455amuphq7/ps3-gsc-dump-zm.json?raw=true").Result)
+                {
+                    if (response.StatusCode != HttpStatusCode.OK)
+                    {
+                        throw new Exception($"Bad response {response.StatusCode}");
+                    }
+
+                    string responseData = response.Content.ReadAsStringAsync().Result;
+
+                    if (IsValidJson(responseData))
+                    {
+                        return JsonConvert.DeserializeObject<GscData>(responseData);
+                    }
+
+                    dynamic data = JsonConvert.DeserializeObject(responseData);
+
+                    throw new Exception(data.data.Message.ToString());
+                }
+            }
+        }
+
+        /// <summary>
+        ///     Download and return the gsc multiplayer dump data
+        /// </summary>
+        /// <returns></returns>
+        internal static GscData GetGscMultiplayerDataXBOX()
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage response = client.GetAsync("https://dl.dropbox.com/s/oz3r3db5h51rrlm/xbox-gsc-dump-mp.json?aw=true").Result)
+                {
+                    if (response.StatusCode != HttpStatusCode.OK)
+                    {
+                        throw new Exception($"Bad response {response.StatusCode}");
+                    }
+
+                    string responseData = response.Content.ReadAsStringAsync().Result;
+
+                    if (IsValidJson(responseData))
+                    {
+                        return JsonConvert.DeserializeObject<GscData>(responseData);
+                    }
+
+                    dynamic data = JsonConvert.DeserializeObject(responseData);
+
+                    throw new Exception(data.data.Message.ToString());
+                }
+            }
+        }
+
+        /// <summary>
+        ///     Download and return the gsc zombies dump data
+        /// </summary>
+        /// <returns></returns>
+        internal static GscData GetGscZombiesDataXBOX()
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                using (HttpResponseMessage response = client.GetAsync("https://dl.dropbox.com/s/wech3c18ss667zd/xbox-gsc-dump-zm.json?raw=true").Result)
                 {
                     if (response.StatusCode != HttpStatusCode.OK)
                     {

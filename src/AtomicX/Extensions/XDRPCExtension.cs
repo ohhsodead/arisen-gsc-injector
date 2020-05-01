@@ -4,9 +4,9 @@ using System.Text;
 using XDevkit;
 using Microsoft.Test.Xbox.XDRPC;
 
-namespace AtomicX
+namespace AtomicX.Extensions
 {
-    static class XDRPC
+    public static class XDRPCExtension
     {
         private static byte[] memoryBuffer = new byte[32];
         private static uint outInt = 0;

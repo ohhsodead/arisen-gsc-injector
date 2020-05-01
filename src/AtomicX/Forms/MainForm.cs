@@ -4,21 +4,15 @@ using AtomicX.Properties;
 using DarkUI.Forms;
 using Newtonsoft.Json;
 using PS3Lib;
-using XRPCLib;
-using Microsoft.Test.Xbox.XDRPC;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using XDevkit;
+using Microsoft.Test.Xbox.XDRPC;
 
 namespace AtomicX.Forms
 {
@@ -31,24 +25,32 @@ namespace AtomicX.Forms
         }
 
         /// <summary>
-        ///     
+        ///     Store the current form instance
         /// </summary>
         public static MainForm mainForm;
 
         /// <summary>
-        ///     
+        ///     Store the application settings data
         /// </summary>
         public static SettingsData SettingsData { get; set; } = new SettingsData();
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            Text = string.Format("AtomicX - Beta {0}", Assembly.GetExecutingAssembly().GetName().Version.ToString().Remove(0, 2));
+            Text = string.Format("AtomicX - Beta v{0}", Assembly.GetExecutingAssembly().GetName().Version.ToString().Remove(0, 2));
 
-            Utilities.CheckApplicationVersion();
-            LoadSettingsData();
-            Worker.RunWorkAsync(LoadData, InitializeFinished);
+            if (Utilities.IsConnectedToInternet())
+            {
+                LoadSettingsData();
+                Utilities.CheckApplicationVersion();
+                Worker.RunWorkAsync(LoadData, InitializeFinished);
 
-            EnableConsoleActions();
+                EnableConsoleActions();
+            }
+            else
+            {
+                SetStatus("Not connected to the interet. Enable this in your computer settings.");
+                _ = DarkMessageBox.Show(mainForm, "Your computer isn't connected to the internet.", "No Internet Connection", MessageBoxIcon.Error);
+            }
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -57,69 +59,89 @@ namespace AtomicX.Forms
         }
 
         /// <summary>
-        ///     
+        ///     Stores the gsc files data for Multiplayer (PS3); File Path, Pointer, Buffer & Size
         /// </summary>
-        public static GscData GscDumpMP;
+        public static GscData GscDumpMultiplayerPS3;
 
         /// <summary>
-        ///     
+        ///     Stores the gsc files data for Zombies (PS3); File Path, Pointer, Buffer & Size
         /// </summary>
-        public static GscData GscDumpZM;
+        public static GscData GscDumpZombiesPS3;
 
         /// <summary>
-        ///     
+        ///     Stores the gsc files data for Multiplayer (XBOX); File Path, Pointer, Buffer & Size
+        /// </summary>
+        public static GscData GscDumpMultiplayerXBOX;
+
+        /// <summary>
+        ///     Stores the gsc files data for Zombies (XBOX); File Path, Pointer, Buffer & Size
+        /// </summary>
+        public static GscData GscDumpZombiesXBOX;
+
+        /// <summary>
+        ///     Store the gsc mods data
         /// </summary>
         public static ModsData Mods;
 
         /// <summary>
-        /// 
+        ///     Store the PS3 instance
         /// </summary>
-        public static PS3API PS3;
+        public PS3API PS3 = new PS3API(SelectAPI.ControlConsole);
 
         /// <summary>
-        /// 
+        ///     Store the Xbox instance
         /// </summary>
-        public IXboxManager xbManager = null;
-        public IXboxConsole xbCon = null;
-
-        public bool activeConnection = false;
-        public uint xboxConnection = 0;
-
-        private string debuggerName = null;
-        private string userName = null;
+        public static IXboxConsole XboxConsole = null;
+        public static IXboxManager XboxManager = null;
+        public static uint XboxConnection = 0;
 
         /// <summary>
-        ///     Retrieves the games and mods data into the application
+        ///     Store the connected console type
+        /// </summary>
+        public static string ConsoleType;
+
+        /// <summary>
+        ///     Retrieve the mods data and gsc data dumps into application
         /// </summary>
         private static void LoadData()
         {
-            GscDumpMP = Utilities.GetGscMultiplayerData();
-            GscDumpZM = Utilities.GetGscZombiesData();
-            Mods = Utilities.GetModsData();
+            try
+            {
+                Mods = Utilities.GetModsData();
+
+                GscDumpMultiplayerPS3 = Utilities.GetGscMultiplayerDataPS3();
+                GscDumpZombiesPS3 = Utilities.GetGscZombiesDataPS3();
+
+                GscDumpMultiplayerXBOX = Utilities.GetGscMultiplayerDataXBOX();
+                GscDumpZombiesXBOX = Utilities.GetGscZombiesDataXBOX();
+            }
+            catch (Exception ex)
+            {
+                _ = DarkMessageBox.Show(mainForm, "There was an issue loading the data into application.\nError: " + ex.Message, "Unable to load data", MessageBoxIcon.Error);
+            }
         }
 
         /// <summary>
-        ///     Finalize application data properties after being initialized
+        ///     Finalize application data after the initialize completes
         /// </summary>
         private void InitializeFinished(object sender, RunWorkerCompletedEventArgs e)
         {
             SetStatus($"Successfully loaded the database - Finalizing data...");
 
-            LoadMods(
-                "",
-                "",
-                "");
+            LoadMods("",
+                     "",
+                     "");
 
             ComboBoxGameType.SelectedIndex = 0;
             ComboBoxModType.SelectedIndex = 0;
 
             ToolStripLabelStats.Text = string.Format("{0} Mods for Multiplayer, {1} Mods for Zombies", Mods.TotalModsMP, Mods.TotalModsZM);
 
-            SetStatus($"Initialized AtomicX (Version Beta {Utilities.CurrentVersion.ToString().Remove(0, 2)}) - Ready to connect and attach...");
+            SetStatus($"Initialized AtomicX (Beta v{Utilities.CurrentVersion.ToString().Remove(0, 2)}) - Ready to connect and attach...");
         }
 
         /// <summary>
-        ///     
+        ///     Store whether console is connected
         /// </summary>
         public static bool IsConsoleConnected { get; set; }
 
@@ -147,7 +169,7 @@ namespace AtomicX.Forms
 
         private void MenuItemXBOXDisconnect_Click(object sender, EventArgs e)
         {
-            //DisconnectXBOX();
+            DisconnectXBOX();
         }
 
         private void MenuItemReportIssue_Click(object sender, EventArgs e)
@@ -181,7 +203,7 @@ namespace AtomicX.Forms
         }
 
         /// <summary>
-        ///     
+        ///     Connect to PS3 console
         /// </summary>
         private void ConnectPS3()
         {
@@ -191,16 +213,22 @@ namespace AtomicX.Forms
                 {
                     if (PS3.AttachProcess())
                     {
-                        NotifyMessageBO2("^2Hooked to AtomicX", "Successfully connected and attached", "party_ready");
-
                         IsConsoleConnected = true;
                         SetStatusConsole(PS3.GetConsoleName());
+                        ConsoleType = "PS3";
                         EnableConsoleActions();
 
                         MenuItemConnectPS3CCAPI.Visible = false;
                         MenuItemConnectPS3TMAPI.Visible = false;
                         MenuItemConnectPS3Disconnect.Visible = true;
-                        
+
+                        MenuItemConnectXBOX.Enabled = false;
+
+                        if (!IsInGame())
+                        {
+                            NotifyMessageBO2("^2Hooked to AtomicX", "Successfully connected and attached", "party_ready");
+                        }
+
                         _ = DarkMessageBox.Show(this, "Connected and attached to Black Ops II", "Success", MessageBoxIcon.Information);
                     }
                     else
@@ -215,19 +243,22 @@ namespace AtomicX.Forms
             }
             catch (Exception ex)
             {
-                _ = DarkMessageBox.Show(this, "There was a problem trying to connect to console. Error Message: " + ex.Message, "Error", MessageBoxIcon.Error);
+                _ = DarkMessageBox.Show(this, "There was a problem trying to connect to console. Error: " + ex.Message, "Error", MessageBoxIcon.Error);
             }
         }
 
         /// <summary>
-        ///     
+        ///     Disconnect from PS3 console
         /// </summary>
         private void DisconnectPS3()
         {
             try
             {
                 PS3.DisconnectTarget();
+
                 IsConsoleConnected = false;
+                ConsoleType = "";
+
                 SetStatusConsole(null);
                 EnableConsoleActions();
 
@@ -235,117 +266,97 @@ namespace AtomicX.Forms
                 MenuItemConnectPS3TMAPI.Visible = true;
                 MenuItemConnectPS3Disconnect.Visible = false;
 
-                SetStatus("Successfully disconnected console.");
-                _ = DarkMessageBox.Show(this, "Successfully disconnected console", "Success", MessageBoxIcon.Information);
+                MenuItemConnectXBOX.Enabled = true;
+                MenuItemXBOXConnect.Visible = true;
+                MenuItemXBOXDisconnect.Visible = false;
+
+                SetStatus("Successfully disconnected from console.");
+                _ = DarkMessageBox.Show(this, "Successfully disconnected from console", "Success", MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                SetStatus("Couldn't disconnect from console - Error Message: " + ex.Message, ex);
-                _ = DarkMessageBox.Show(this, "There was a problem disconnecting from console - Error Message: " + ex.Message, "Error", MessageBoxIcon.Error);
+                SetStatus("Couldn't disconnect from console - Error: " + ex.Message, ex);
+                _ = DarkMessageBox.Show(this, "Couldn't disconnect from console - Error: " + ex.Message, "Error", MessageBoxIcon.Error);
             }
         }
 
         /// <summary>
-        ///     
+        ///     Connect to default xbox console
         /// </summary>
         private void ConnectXBOX()
         {
             try
             {
-                if (ConnectToXbox())
-                {
-                    IsConsoleConnected = true;
-                    SetStatusConsole(xbCon.Name);
-                    EnableConsoleActions();
+                XboxManager = new XboxManager();
+                XboxConsole = XboxManager.OpenConsole(XboxManager.DefaultConsole);
 
-                    //xbCon.WriteUInt32();
-                    //xbCon.WriteBytes();
+                XboxConnection = XboxConsole.OpenConnection(null);
 
-                    //CPUKeyLabel.Text = xbCon.GetCPUKey();
-                    //TitleIDLabel.Text = string.Format("Current Title ID: 0x{0}", xbCon.GetCurrentTitleId().ToString("X"));
-                    //ConsoleDebugIPLabel.Text = string.Format("Console Debug IP: {0}", xbCon.GetConsoleIP());
-                }
-                else
-                {
-                    //CPUKeyLabel.Text = "00000000000000000000000000000000";
-                    //TitleIDLabel.Text = "Current Title ID: 0x00000000";
-                    //ConsoleDebugIPLabel.Text = "Console Debug IP: 192.168.1.1";
-                }
+                IsConsoleConnected = true;
+                ConsoleType = "XBOX";
+
+                SetStatusConsole(XboxConsole.Name);
+                EnableConsoleActions();
+
+                MenuItemConnectPS3.Enabled = false;
+
+                MenuItemXBOXConnect.Visible = false;
+                MenuItemXBOXDisconnect.Visible = true;
+
+                SetStatus("Successfully connected to console.");
+                _ = DarkMessageBox.Show(this, "Connected to console.", "Success", MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                _ = DarkMessageBox.Show(this, "Couldn't connect to console. Error Message: " + ex.Message, "Error", MessageBoxIcon.Error);
+                SetStatus("Couldn't connect to console - Error: " + ex.Message, ex);
+                _ = DarkMessageBox.Show(this, "Could not connect to console. Error: " + ex.Message, "Error", MessageBoxIcon.Error);
             }
         }
 
         /// <summary>
-        ///     
+        ///     Disconnect from Xbox console
         /// </summary>
-        /// <returns></returns>
-        public bool ConnectToXbox()
+        private void DisconnectXBOX()
         {
-            if (!activeConnection)
+            try
             {
-                xbManager = new XboxManager();
-                xbCon = xbManager.OpenConsole(xbManager.DefaultConsole);
+                XboxConsole.CloseConnection(XboxConnection);
 
-                try
-                {
-                    xboxConnection = xbCon.OpenConnection(null);
-                }
-                catch (Exception ex)
-                {
-                    _ = DarkMessageBox.Show(this, $"Couldn't connect to console: {xbManager.DefaultConsole}. Error Message: " + ex.Message, "Error", MessageBoxIcon.Error);
-                    return false;
-                }
-                if (xbCon.DebugTarget.IsDebuggerConnected(out debuggerName, out userName))
-                {
-                    activeConnection = true;
-                    _ = DarkMessageBox.Show(this, $"Succesfully connected to console: {xbManager.DefaultConsole}.", "Success", MessageBoxIcon.Information);
-                    return true;
-                }
-                else
-                {
-                    xbCon.DebugTarget.ConnectAsDebugger("AtomicX", XboxDebugConnectFlags.Force);
-                    if (!xbCon.DebugTarget.IsDebuggerConnected(out debuggerName, out userName))
-                    {
-                        _ = DarkMessageBox.Show(this, $"Attempted to connect to console: {xbCon.Name}, but failed", "Error", MessageBoxIcon.Error);
-                        return false;
-                    }
-                    else
-                    {
-                        activeConnection = true;
-                        _ = DarkMessageBox.Show(this, $"Succesfully connected to console: {xbCon.Name}.", "Success", MessageBoxIcon.Information);
-                        return true;
-                    }
-                }
+                IsConsoleConnected = false;
+                SetStatusConsole(null);
+                ConsoleType = "";
+                EnableConsoleActions();
+
+                MenuItemConnectPS3.Enabled = true;
+                MenuItemConnectPS3Disconnect.Visible = false;
+
+                MenuItemXBOXConnect.Visible = true;
+                MenuItemXBOXDisconnect.Visible = false;
+
+                SetStatus("Successfully disconnected from console.");
+                _ = DarkMessageBox.Show(this, "Successfully disconnected from console", "Success", MessageBoxIcon.Information);
             }
-            else if (xbCon.DebugTarget.IsDebuggerConnected(out debuggerName, out userName))
+            catch (Exception ex)
             {
-                _ = DarkMessageBox.Show(this, $"Already connected to console: {xbCon.Name}.", "Success", MessageBoxIcon.Information);
-                return true;
-            }
-            else
-            {
-                activeConnection = false;
-                return ConnectToXbox();
+                SetStatus("Couldn't disconnect from console - Error: " + ex.Message, ex);
+                _ = DarkMessageBox.Show(this, "Couldn't disconnect from console - Error: " + ex.Message, "Error", MessageBoxIcon.Error);
             }
         }
 
         /// <summary>
-        ///     Get/set the name to filter mods by
+        ///     Store the name filter mods option
         /// </summary>
         private string FilterModsName { get; set; } = "";
 
         /// <summary>
-        ///     Get/set the game type to filter mods by
+        ///     Store the game type filter mods option
         /// </summary>
         private string FilterModsGameType { get; set; } = "";
 
         /// <summary>
-        ///     Get/set the mods type to filter mods by
+        ///     Store the mod type filter mods option
         /// </summary>
-        private string FilterModsType { get; set; } = "";
+        private string FilterModType { get; set; } = "";
 
         private void TextBoxSearch_TextChanged(object sender, EventArgs e)
         {
@@ -354,34 +365,32 @@ namespace AtomicX.Forms
             LoadMods(
                 FilterModsName,
                 FilterModsGameType,
-                FilterModsType);
+                FilterModType);
         }
 
         private void ComboBoxGameType_SelectedIndexChanged(object sender, EventArgs e)
         {
             FilterModsGameType = ComboBoxGameType.GetItemText(ComboBoxGameType.SelectedItem);
 
-            LoadMods(
-                FilterModsName,
-                FilterModsGameType,
-                FilterModsType);
+            LoadMods(FilterModsName,
+                     FilterModsGameType,
+                     FilterModType);
         }
 
         private void ComboBoxModType_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (ComboBoxModType.SelectedIndex == 0)
             {
-                FilterModsType = "";
+                FilterModType = "";
             }
             else
             {
-                FilterModsType = ComboBoxModType.GetItemText(ComboBoxModType.SelectedItem);
+                FilterModType = ComboBoxModType.GetItemText(ComboBoxModType.SelectedItem);
             }
 
-            LoadMods(
-                FilterModsName,
-                FilterModsGameType,
-                FilterModsType);
+            LoadMods(FilterModsName,
+                     FilterModsGameType,
+                     FilterModType);
         }
 
         /// <summary>
@@ -507,24 +516,37 @@ namespace AtomicX.Forms
             {
                 if (IsInGame())
                 {
-                    _ = DarkMessageBox.Show(this, "You must be in the pre-game lobby before clearing GSC mods.", "Can't Inject", MessageBoxIcon.Exclamation);
+                    SetStatus($"You must be in pre-game lobby before clearing GSC files.");
+                    _ = DarkMessageBox.Show(this, "You must be in pre-game lobby before clearing GSC files.", "Can't Inject", MessageBoxIcon.Exclamation);
                     return;
                 }
 
-                NotifyMessageBO2("^2Cleared GSC Mods", "Successfully cleared all mods", "party_ready");
-
                 foreach (string gscFile in LastUsedGscFiles)
                 {
-                    GscData.FileItem gscFileData = GetGscFileData(LastInjectedGameType, gscFile);
-                    PS3.Extension.WriteUInt32(Convert.ToUInt32(gscFileData.Pointer), Convert.ToUInt32(gscFileData.Buffer));
+                    GscData.FileItem gscFileData = GetGscFileData(ConsoleType, LastInjectedGameType, gscFile);
+
+                    if (ConsoleType.Equals("PS3"))
+                    {
+                        PS3.Extension.WriteUInt32(gscFileData.Pointer, gscFileData.Buffer);
+                    }
+                    else if (ConsoleType.Equals("XBOX"))
+                    {
+                        XboxConsole.WriteUInt32(gscFileData.Pointer, gscFileData.Buffer);
+                    }
                 }
 
-                _ = DarkMessageBox.Show(this, "All GSC mods have been cleared.", "Success", MessageBoxIcon.Information);
+                if (ConsoleType.Equals("PS3"))
+                {
+                    NotifyMessageBO2("^2Cleared GSC Mods", "Successfully cleared all mods", "party_ready");
+                }
+
+                SetStatus($"All GSC files have been restored.");
+                _ = DarkMessageBox.Show(this, "All GSC files have been restored.", "Success", MessageBoxIcon.Information);
             }
             catch (Exception ex)
             {
-                NotifyMessageBO2("^1Unable to Clear Mods", ex.Message, "party_notready");
-                _ = DarkMessageBox.Show(this, "Unable to clear GSC mods.\n\nMessage:\n" + ex.Message, "Error", MessageBoxIcon.Error);
+                SetStatus($"Unable to clear GSC files. Error: " + ex.Message, ex);
+                _ = DarkMessageBox.Show(this, "Unable to clear GSC files.\n\nMessage:\n" + ex.Message, "Error", MessageBoxIcon.Error);
             }
         }
 
@@ -534,43 +556,116 @@ namespace AtomicX.Forms
         /// <param name="modItem"></param>
         private void InjectModItem(ModsData.ModItem modItem)
         {
-            if (IsInGame())
+            try
             {
-                _ = DarkMessageBox.Show(this, "You must be in the pre-game lobby before injecting GSC mods.", "Can't Inject", MessageBoxIcon.Exclamation);
-                return;
-            }          
-
-            ClearGscMods();
-            LastUsedGscFiles.Clear();
-            modItem.DownloadInstallFiles();
-            
-            foreach (string installFilePath in modItem.InstallPaths)
-            {
-                foreach (string localFilePath in Directory.GetFiles(modItem.GetDirectoryDownloadData(), "*.*", SearchOption.AllDirectories))
+                if (IsInGame())
                 {
-                    string installFileName = Path.GetFileName(installFilePath);
+                    SetStatus($"You must be in pre-game lobby before injecting mods.");
+                    _ = DarkMessageBox.Show(this, "You must be in pre-game lobby before injecting mods.", "Can't Inject", MessageBoxIcon.Exclamation);
+                    return;
+                }
 
-                    if (string.Equals(installFileName, Path.GetFileName(localFilePath), StringComparison.CurrentCultureIgnoreCase))
+                ClearGscMods();
+                LastUsedGscFiles.Clear();
+
+                modItem.DownloadInstallFiles();
+
+                // Free Memory Offsets
+                uint freeMemoryOffset;
+
+                if (ConsoleType.Equals("PS3"))
+                {
+                    freeMemoryOffset = 0x51000000;
+                }
+                else
+                {
+                    freeMemoryOffset = 0x40300000;
+                }
+
+                foreach (string installFilePath in modItem.InstallPaths)
+                {
+                    foreach (string localFilePath in Directory.GetFiles(modItem.GetDirectoryDownloadData(), "*.*", SearchOption.AllDirectories))
                     {
-                        GscData.FileItem gscFileData = GetGscFileData(modItem.GameType, installFilePath);
+                        string installFileName = Path.GetFileName(installFilePath);
 
-                        LastUsedGscFiles.Add(installFilePath);
+                        if (string.Equals(installFileName, Path.GetFileName(localFilePath), StringComparison.CurrentCultureIgnoreCase))
+                        {
+                            GscData.FileItem gscFileData = GetGscFileData(ConsoleType, modItem.GameType, installFilePath);
 
-                        byte[] gscFile = File.ReadAllBytes(localFilePath);
+                            LastUsedGscFiles.Add(installFilePath);
 
-                        PS3.Extension.WriteUInt32(gscFileData.Pointer, 0x10400000); // Overwrite script pointer 
-                        PS3.Extension.WriteBytes(0x10400000, gscFile); // Write compiled script buffer to free memory location 
+                            byte[] gscFile = File.ReadAllBytes(localFilePath);
+
+                            SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.GetGameType()}) - Injecting GSC file: {installFileName} ...");
+
+                            if (ConsoleType.Equals("PS3"))
+                            {
+                                PS3.Extension.WriteUInt32(gscFileData.Pointer, 0x51000000); // Overwrite script pointer 
+                                PS3.Extension.WriteBytes(0x51000000, gscFile); // Write compiled script buffer to free memory location 
+                            }
+                            else if (ConsoleType.Equals("XBOX"))
+                            {
+                                XboxConsole.WriteUInt32(gscFileData.Pointer, 0x40300000);
+                                XboxConsole.WriteBytes(0x40300000, gscFile);
+                            }
+
+                            /* TESTS FOR INJECTING MUTIPLE GSC FILES
+                            if (ConsoleType.Equals("PS3"))
+                            {
+                                freeMemoryOffset = GET_ALIGNED_DWORD(freeMemoryOffset + 1);
+
+                                PS3.Extension.WriteUInt32(gscFileData.Pointer, freeMemoryOffset); // Overwrite script pointer 
+                                PS3.Extension.WriteBytes(freeMemoryOffset, new byte[gscFile.Length + 1]);
+                                PS3.Extension.WriteBytes(freeMemoryOffset, gscFile); // Write compiled script buffer to free memory location 
+
+                                freeMemoryOffset += (uint)(gscFile.Length + 1);
+                            }
+                            else if (ConsoleType.Equals("XBOX"))
+                            {
+                                freeMemoryOffset = GET_ALIGNED_DWORD(freeMemoryOffset + 1);
+
+                                XBOX.SetMemory(gscFileData.Pointer, BitConverter.GetBytes(freeMemoryOffset).Reverse().ToArray());
+                                XBOX.SetMemory(freeMemoryOffset, new byte[gscFile.Length + 1]);
+                                XBOX.SetMemory(freeMemoryOffset, gscFile);
+
+                                freeMemoryOffset += (uint)(gscFile.Length + 1);
+                            }
+                            */
+
+                            SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.GetGameType()}) - Injected GSC file: {installFileName}");
+                        }
                     }
                 }
+
+                LastInjectedGameType = modItem.GameType;
+
+                SettingsData.UpdateInstalledMod(modItem.GameType, modItem.Id);
+                SaveSettingsData();
+
+                if (ConsoleType.Equals("PS3"))
+                {
+                    NotifyMessageBO2("^2Injected GSC Mods", $"{modItem.Name} v{modItem.Version} by {modItem.CreatedBy}", "party_ready");
+                }
+
+                SetStatus($"{modItem.Name} v{modItem.Version} ({modItem.GetGameType()}) - Injected all GSC files");
+
+                _ = DarkMessageBox.Show(this, $"Injected Mods: {modItem.Name}\nTime: {DateTime.Now:H:mm:ss}", "Success", MessageBoxIcon.Information);
             }
+            catch (Exception ex)
+            {
+                SetStatus($"Unable to inject GSC files. Error: " + ex.Message, ex);
+                _ = DarkMessageBox.Show(this, "Unable to inject GSC files.\nMessage:" + ex.Message, "Error", MessageBoxIcon.Error);
+            }
+        }
 
-            LastInjectedGameType = modItem.GameType;
-
-            SettingsData.UpdateInstalledMod(modItem.GameType, modItem.Id);
-            SaveSettingsData();
-
-            NotifyMessageBO2("^2GSC Injected", $"{modItem.Name} v{modItem.Version} by {modItem.CreatedBy}", "party_ready");
-            _ = DarkMessageBox.Show(this, $"Injected Mods: {modItem.Name}\nTime: {DateTime.Now:H:mm:ss}", "Success", MessageBoxIcon.Information);
+        /// <summary>
+        ///     
+        /// </summary>
+        /// <param name="address"></param>
+        /// <returns></returns>
+        public uint GET_ALIGNED_DWORD(uint address)
+        {
+            return (address + 3) & 0xFFFFFFFC;
         }
 
         /// <summary>
@@ -586,7 +681,9 @@ namespace AtomicX.Forms
                     if (folderBrowser.ShowDialog() == DialogResult.OK)
                     {
                         SetStatus($"{modItem.Name} ({modItem.GetGameType()}) - Downloading archive...");
+
                         modItem.DownloadArchiveAtPath(folderBrowser.SelectedPath);
+
                         SetStatus($"{modItem.Name} ({modItem.GetGameType()}) - Successfully downloaded archive at path: {folderBrowser.SelectedPath}");
                     }
                     else
@@ -605,9 +702,18 @@ namespace AtomicX.Forms
         ///     Returns whether the user is in a game or pre-game lobby
         /// </summary>
         /// <returns></returns>
-        public static bool IsInGame()
+        public bool IsInGame()
         {
-            return Convert.ToBoolean(PS3.Extension.ReadUInt32(0x1CB68C0 + 0x18));
+            if (ConsoleType.Equals("PS3"))
+            {
+                return Convert.ToBoolean(PS3.Extension.ReadUInt32(0x1CB68C0 + 0x18));
+            }
+            else if (ConsoleType.Equals("XBOX"))
+            {
+                return Convert.ToBoolean(XboxConsole.CallString(0x82154FF8, new object[] { 0, "cl_ingame" }));
+            }
+
+            return false;
         }
 
         /// <summary>
@@ -694,41 +800,68 @@ namespace AtomicX.Forms
         /// <summary>
         ///     
         /// </summary>
+        /// <param name="consoleType"></param>
         /// <param name="gameType"></param>
         /// <param name="filePath"></param>
         /// <returns></returns>
-        public static GscData.FileItem GetGscFileData(string gameType, string filePath)
+        public static GscData.FileItem GetGscFileData(string consoleType, string gameType, string filePath)
         {
-            if (gameType.Equals("MP"))
+            if (consoleType.Equals("PS3"))
             {
-                foreach (GscData.FileItem fileItem in GscDumpMP.Files)
+                if (gameType.Equals("MP"))
                 {
-                    if (fileItem.Name.ToLower().Equals(filePath.ToLower()))
+                    foreach (GscData.FileItem fileItem in GscDumpMultiplayerPS3.Files)
                     {
-                        return fileItem;
+                        if (fileItem.Name.ToLower().Equals(filePath.ToLower()))
+                        {
+                            return fileItem;
+                        }
+                    }
+                }
+                else if (gameType.Equals("ZM"))
+                {
+                    foreach (GscData.FileItem fileItem in GscDumpZombiesPS3.Files)
+                    {
+                        if (fileItem.Name.ToLower().Equals(filePath.ToLower()))
+                        {
+                            return fileItem;
+                        }
                     }
                 }
             }
-            else if (gameType.Equals("ZM"))
+            else if (consoleType.Equals("XBOX"))
             {
-                foreach (GscData.FileItem fileItem in GscDumpZM.Files)
+                if (gameType.Equals("MP"))
                 {
-                    if (fileItem.Name.ToLower().Equals(filePath.ToLower()))
+                    foreach (GscData.FileItem fileItem in GscDumpMultiplayerXBOX.Files)
                     {
-                        return fileItem;
+                        if (fileItem.Name.ToLower().Equals(filePath.ToLower()))
+                        {
+                            return fileItem;
+                        }
+                    }
+                }
+                else if (gameType.Equals("ZM"))
+                {
+                    foreach (GscData.FileItem fileItem in GscDumpZombiesXBOX.Files)
+                    {
+                        if (fileItem.Name.ToLower().Equals(filePath.ToLower()))
+                        {
+                            return fileItem;
+                        }
                     }
                 }
             }
 
-            throw new Exception("Can't find any gsc data for this game type and file path.");
+            throw new Exception($"Can't find any gsc data for console type: {consoleType}, game type: {gameType}, file path: {filePath}");
         }
 
         /// <summary>
-        ///     
+        ///     Enable/disable console controls
         /// </summary>
         private void EnableConsoleActions()
         {
-            //MenuItemToolsCustomInjector.Enabled = IsConsoleConnected;
+            MenuItemToolsCustomInjector.Enabled = IsConsoleConnected;
             MenuItemClearGscMods.Enabled = IsConsoleConnected;
             ToolItemInstallMod.Enabled = IsConsoleConnected;
             ToolItemDownloadMod.Enabled = IsConsoleConnected;
@@ -801,3 +934,4 @@ namespace AtomicX.Forms
         }
     }
 }
+ 

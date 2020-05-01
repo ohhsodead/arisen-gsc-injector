@@ -132,7 +132,7 @@
             this.DgvMods.AllowUserToDragDropRows = false;
             this.DgvMods.AllowUserToPasteCells = false;
             this.DgvMods.AllowUserToResizeColumns = false;
-            this.DgvMods.ColumnHeadersHeight = 23;
+            this.DgvMods.ColumnHeadersHeight = 29;
             this.DgvMods.ColumnHeadersVisible = false;
             this.DgvMods.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColumnModId,
@@ -163,20 +163,24 @@
             // ColumnModId
             // 
             this.ColumnModId.HeaderText = "Id";
+            this.ColumnModId.MinimumWidth = 6;
             this.ColumnModId.Name = "ColumnModId";
             this.ColumnModId.ReadOnly = true;
             this.ColumnModId.Visible = false;
+            this.ColumnModId.Width = 125;
             // 
             // ColumnModName
             // 
             this.ColumnModName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ColumnModName.HeaderText = "Name";
+            this.ColumnModName.MinimumWidth = 6;
             this.ColumnModName.Name = "ColumnModName";
             this.ColumnModName.ReadOnly = true;
             // 
             // ColumnGameType
             // 
             this.ColumnGameType.HeaderText = "Game Type";
+            this.ColumnGameType.MinimumWidth = 6;
             this.ColumnGameType.Name = "ColumnGameType";
             this.ColumnGameType.ReadOnly = true;
             this.ColumnGameType.Width = 80;
@@ -184,6 +188,7 @@
             // ColumnModType
             // 
             this.ColumnModType.HeaderText = "Mod Type";
+            this.ColumnModType.MinimumWidth = 6;
             this.ColumnModType.Name = "ColumnModType";
             this.ColumnModType.ReadOnly = true;
             this.ColumnModType.Width = 80;
@@ -191,6 +196,7 @@
             // ColumnModVersion
             // 
             this.ColumnModVersion.HeaderText = "Version";
+            this.ColumnModVersion.MinimumWidth = 6;
             this.ColumnModVersion.Name = "ColumnModVersion";
             this.ColumnModVersion.ReadOnly = true;
             this.ColumnModVersion.Width = 50;
@@ -198,6 +204,7 @@
             // ColumnModAuthor
             // 
             this.ColumnModAuthor.HeaderText = "Author";
+            this.ColumnModAuthor.MinimumWidth = 6;
             this.ColumnModAuthor.Name = "ColumnModAuthor";
             this.ColumnModAuthor.ReadOnly = true;
             this.ColumnModAuthor.Width = 145;
@@ -205,6 +212,7 @@
             // ColumnInstall
             // 
             this.ColumnInstall.HeaderText = "Install";
+            this.ColumnInstall.MinimumWidth = 6;
             this.ColumnInstall.Name = "ColumnInstall";
             this.ColumnInstall.ReadOnly = true;
             this.ColumnInstall.Width = 28;
@@ -212,6 +220,7 @@
             // ColumnDownload
             // 
             this.ColumnDownload.HeaderText = "Download";
+            this.ColumnDownload.MinimumWidth = 6;
             this.ColumnDownload.Name = "ColumnDownload";
             this.ColumnDownload.ReadOnly = true;
             this.ColumnDownload.Width = 28;
@@ -262,7 +271,7 @@
             this.TextBoxSearch.Location = new System.Drawing.Point(62, 32);
             this.TextBoxSearch.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.TextBoxSearch.Name = "TextBoxSearch";
-            this.TextBoxSearch.Size = new System.Drawing.Size(278, 23);
+            this.TextBoxSearch.Size = new System.Drawing.Size(278, 27);
             this.TextBoxSearch.TabIndex = 1158;
             this.TextBoxSearch.TextChanged += new System.EventHandler(this.TextBoxSearch_TextChanged);
             // 
@@ -276,7 +285,7 @@
             this.LabelSearch.Location = new System.Drawing.Point(5, 35);
             this.LabelSearch.Margin = new System.Windows.Forms.Padding(3, 5, 3, 2);
             this.LabelSearch.Name = "LabelSearch";
-            this.LabelSearch.Size = new System.Drawing.Size(51, 15);
+            this.LabelSearch.Size = new System.Drawing.Size(64, 20);
             this.LabelSearch.TabIndex = 1157;
             this.LabelSearch.Text = "SEARCH";
             // 
@@ -291,7 +300,7 @@
             this.ComboBoxModType.Location = new System.Drawing.Point(596, 32);
             this.ComboBoxModType.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ComboBoxModType.Name = "ComboBoxModType";
-            this.ComboBoxModType.Size = new System.Drawing.Size(100, 24);
+            this.ComboBoxModType.Size = new System.Drawing.Size(100, 28);
             this.ComboBoxModType.TabIndex = 4;
             this.ComboBoxModType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxModType_SelectedIndexChanged);
             // 
@@ -306,7 +315,7 @@
             this.LabelSelectGameType.Location = new System.Drawing.Point(349, 35);
             this.LabelSelectGameType.Margin = new System.Windows.Forms.Padding(6, 5, 3, 2);
             this.LabelSelectGameType.Name = "LabelSelectGameType";
-            this.LabelSelectGameType.Size = new System.Drawing.Size(69, 15);
+            this.LabelSelectGameType.Size = new System.Drawing.Size(86, 20);
             this.LabelSelectGameType.TabIndex = 1156;
             this.LabelSelectGameType.Text = "GAME TYPE";
             // 
@@ -321,7 +330,7 @@
             this.LabelSelectModType.Location = new System.Drawing.Point(526, 35);
             this.LabelSelectModType.Margin = new System.Windows.Forms.Padding(6, 5, 3, 2);
             this.LabelSelectModType.Name = "LabelSelectModType";
-            this.LabelSelectModType.Size = new System.Drawing.Size(64, 15);
+            this.LabelSelectModType.Size = new System.Drawing.Size(80, 20);
             this.LabelSelectModType.TabIndex = 1122;
             this.LabelSelectModType.Text = "MOD TYPE";
             // 
@@ -335,7 +344,7 @@
             this.ComboBoxGameType.Location = new System.Drawing.Point(424, 32);
             this.ComboBoxGameType.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ComboBoxGameType.Name = "ComboBoxGameType";
-            this.ComboBoxGameType.Size = new System.Drawing.Size(93, 24);
+            this.ComboBoxGameType.Size = new System.Drawing.Size(93, 28);
             this.ComboBoxGameType.TabIndex = 3;
             this.ComboBoxGameType.SelectedIndexChanged += new System.EventHandler(this.ComboBoxGameType_SelectedIndexChanged);
             // 
@@ -413,7 +422,7 @@
             this.LabelHeaderName.Location = new System.Drawing.Point(5, 30);
             this.LabelHeaderName.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
             this.LabelHeaderName.Name = "LabelHeaderName";
-            this.LabelHeaderName.Size = new System.Drawing.Size(43, 15);
+            this.LabelHeaderName.Size = new System.Drawing.Size(55, 20);
             this.LabelHeaderName.TabIndex = 26;
             this.LabelHeaderName.Text = "Name:";
             // 
@@ -424,10 +433,10 @@
             this.LabelHeaderNameNo.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelHeaderNameNo.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelHeaderNameNo.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderNameNo.Location = new System.Drawing.Point(50, 30);
+            this.LabelHeaderNameNo.Location = new System.Drawing.Point(62, 30);
             this.LabelHeaderNameNo.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelHeaderNameNo.Name = "LabelHeaderNameNo";
-            this.LabelHeaderNameNo.Size = new System.Drawing.Size(16, 15);
+            this.LabelHeaderNameNo.Size = new System.Drawing.Size(18, 20);
             this.LabelHeaderNameNo.TabIndex = 2;
             this.LabelHeaderNameNo.Text = "...";
             // 
@@ -437,10 +446,10 @@
             this.LabelHeaderGameType.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelHeaderGameType.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelHeaderGameType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderGameType.Location = new System.Drawing.Point(5, 51);
+            this.LabelHeaderGameType.Location = new System.Drawing.Point(5, 56);
             this.LabelHeaderGameType.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
             this.LabelHeaderGameType.Name = "LabelHeaderGameType";
-            this.LabelHeaderGameType.Size = new System.Drawing.Size(72, 15);
+            this.LabelHeaderGameType.Size = new System.Drawing.Size(91, 20);
             this.LabelHeaderGameType.TabIndex = 24;
             this.LabelHeaderGameType.Text = "Game Type:";
             // 
@@ -451,10 +460,10 @@
             this.LabelGameType.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelGameType.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelGameType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelGameType.Location = new System.Drawing.Point(79, 51);
+            this.LabelGameType.Location = new System.Drawing.Point(98, 56);
             this.LabelGameType.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelGameType.Name = "LabelGameType";
-            this.LabelGameType.Size = new System.Drawing.Size(16, 15);
+            this.LabelGameType.Size = new System.Drawing.Size(18, 20);
             this.LabelGameType.TabIndex = 23;
             this.LabelGameType.Text = "...";
             // 
@@ -464,10 +473,10 @@
             this.LabelHeaderModType.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelHeaderModType.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelHeaderModType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderModType.Location = new System.Drawing.Point(5, 72);
+            this.LabelHeaderModType.Location = new System.Drawing.Point(5, 82);
             this.LabelHeaderModType.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
             this.LabelHeaderModType.Name = "LabelHeaderModType";
-            this.LabelHeaderModType.Size = new System.Drawing.Size(64, 15);
+            this.LabelHeaderModType.Size = new System.Drawing.Size(82, 20);
             this.LabelHeaderModType.TabIndex = 16;
             this.LabelHeaderModType.Text = "Mod Type:";
             // 
@@ -478,10 +487,10 @@
             this.LabelModType.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelModType.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelModType.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelModType.Location = new System.Drawing.Point(71, 72);
+            this.LabelModType.Location = new System.Drawing.Point(89, 82);
             this.LabelModType.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelModType.Name = "LabelModType";
-            this.LabelModType.Size = new System.Drawing.Size(16, 15);
+            this.LabelModType.Size = new System.Drawing.Size(18, 20);
             this.LabelModType.TabIndex = 17;
             this.LabelModType.Text = "...";
             // 
@@ -491,10 +500,10 @@
             this.LabelHeaderVersion.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelHeaderVersion.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelHeaderVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderVersion.Location = new System.Drawing.Point(5, 93);
+            this.LabelHeaderVersion.Location = new System.Drawing.Point(5, 108);
             this.LabelHeaderVersion.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
             this.LabelHeaderVersion.Name = "LabelHeaderVersion";
-            this.LabelHeaderVersion.Size = new System.Drawing.Size(51, 15);
+            this.LabelHeaderVersion.Size = new System.Drawing.Size(65, 20);
             this.LabelHeaderVersion.TabIndex = 3;
             this.LabelHeaderVersion.Text = "Version:";
             // 
@@ -505,10 +514,10 @@
             this.LabelVersion.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelVersion.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelVersion.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelVersion.Location = new System.Drawing.Point(58, 93);
+            this.LabelVersion.Location = new System.Drawing.Point(72, 108);
             this.LabelVersion.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelVersion.Name = "LabelVersion";
-            this.LabelVersion.Size = new System.Drawing.Size(16, 15);
+            this.LabelVersion.Size = new System.Drawing.Size(18, 20);
             this.LabelVersion.TabIndex = 4;
             this.LabelVersion.Text = "...";
             // 
@@ -518,10 +527,10 @@
             this.LabelHeaderAuthor.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.LabelHeaderAuthor.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelHeaderAuthor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderAuthor.Location = new System.Drawing.Point(5, 114);
+            this.LabelHeaderAuthor.Location = new System.Drawing.Point(5, 134);
             this.LabelHeaderAuthor.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
             this.LabelHeaderAuthor.Name = "LabelHeaderAuthor";
-            this.LabelHeaderAuthor.Size = new System.Drawing.Size(71, 15);
+            this.LabelHeaderAuthor.Size = new System.Drawing.Size(89, 20);
             this.LabelHeaderAuthor.TabIndex = 6;
             this.LabelHeaderAuthor.Text = "Created By:";
             // 
@@ -532,10 +541,10 @@
             this.LabelAuthor.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelAuthor.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelAuthor.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelAuthor.Location = new System.Drawing.Point(78, 114);
+            this.LabelAuthor.Location = new System.Drawing.Point(96, 134);
             this.LabelAuthor.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelAuthor.Name = "LabelAuthor";
-            this.LabelAuthor.Size = new System.Drawing.Size(16, 15);
+            this.LabelAuthor.Size = new System.Drawing.Size(18, 20);
             this.LabelAuthor.TabIndex = 15;
             this.LabelAuthor.Text = "...";
             // 
@@ -545,10 +554,10 @@
             this.LabelHeaderSubmittedBy.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LabelHeaderSubmittedBy.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelHeaderSubmittedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelHeaderSubmittedBy.Location = new System.Drawing.Point(5, 135);
+            this.LabelHeaderSubmittedBy.Location = new System.Drawing.Point(5, 160);
             this.LabelHeaderSubmittedBy.Margin = new System.Windows.Forms.Padding(3, 3, 2, 3);
             this.LabelHeaderSubmittedBy.Name = "LabelHeaderSubmittedBy";
-            this.LabelHeaderSubmittedBy.Size = new System.Drawing.Size(86, 15);
+            this.LabelHeaderSubmittedBy.Size = new System.Drawing.Size(108, 20);
             this.LabelHeaderSubmittedBy.TabIndex = 13;
             this.LabelHeaderSubmittedBy.Text = "Submitted By:";
             // 
@@ -559,17 +568,17 @@
             this.LabelSubmittedBy.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelSubmittedBy.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelSubmittedBy.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelSubmittedBy.Location = new System.Drawing.Point(93, 135);
+            this.LabelSubmittedBy.Location = new System.Drawing.Point(115, 160);
             this.LabelSubmittedBy.Margin = new System.Windows.Forms.Padding(0, 3, 3, 3);
             this.LabelSubmittedBy.Name = "LabelSubmittedBy";
-            this.LabelSubmittedBy.Size = new System.Drawing.Size(16, 15);
+            this.LabelSubmittedBy.Size = new System.Drawing.Size(18, 20);
             this.LabelSubmittedBy.TabIndex = 14;
             this.LabelSubmittedBy.Text = "...";
             // 
             // darkTitle8
             // 
             this.darkTitle8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
-            this.darkTitle8.Location = new System.Drawing.Point(8, 156);
+            this.darkTitle8.Location = new System.Drawing.Point(8, 186);
             this.darkTitle8.Margin = new System.Windows.Forms.Padding(6, 3, 3, 3);
             this.darkTitle8.Name = "darkTitle8";
             this.darkTitle8.Size = new System.Drawing.Size(314, 18);
@@ -583,12 +592,12 @@
             this.LabelDescription.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.LabelDescription.ForeColor = System.Drawing.Color.Gainsboro;
             this.LabelDescription.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.LabelDescription.Location = new System.Drawing.Point(5, 179);
+            this.LabelDescription.Location = new System.Drawing.Point(5, 209);
             this.LabelDescription.Margin = new System.Windows.Forms.Padding(3, 2, 2, 3);
             this.LabelDescription.MaximumSize = new System.Drawing.Size(478, 0);
             this.LabelDescription.Name = "LabelDescription";
             this.LabelDescription.Padding = new System.Windows.Forms.Padding(0, 0, 0, 15);
-            this.LabelDescription.Size = new System.Drawing.Size(16, 30);
+            this.LabelDescription.Size = new System.Drawing.Size(18, 35);
             this.LabelDescription.TabIndex = 12;
             this.LabelDescription.Text = "...";
             // 
@@ -624,7 +633,7 @@
             this.ToolItemInstallMod.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolItemInstallMod.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ToolItemInstallMod.Name = "ToolItemInstallMod";
-            this.ToolItemInstallMod.Size = new System.Drawing.Size(66, 27);
+            this.ToolItemInstallMod.Size = new System.Drawing.Size(78, 27);
             this.ToolItemInstallMod.Text = "Install";
             this.ToolItemInstallMod.Click += new System.EventHandler(this.ToolItemInstallMod_Click);
             // 
@@ -640,7 +649,7 @@
             this.ToolItemUninstallMod.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolItemUninstallMod.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ToolItemUninstallMod.Name = "ToolItemUninstallMod";
-            this.ToolItemUninstallMod.Size = new System.Drawing.Size(81, 27);
+            this.ToolItemUninstallMod.Size = new System.Drawing.Size(97, 27);
             this.ToolItemUninstallMod.Text = "Uninstall";
             this.ToolItemUninstallMod.Click += new System.EventHandler(this.ToolItemUninstallMod_Click);
             // 
@@ -655,7 +664,7 @@
             this.ToolItemDownloadMod.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.ToolItemDownloadMod.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ToolItemDownloadMod.Name = "ToolItemDownloadMod";
-            this.ToolItemDownloadMod.Size = new System.Drawing.Size(89, 27);
+            this.ToolItemDownloadMod.Size = new System.Drawing.Size(106, 27);
             this.ToolItemDownloadMod.Text = "Download";
             this.ToolItemDownloadMod.Click += new System.EventHandler(this.ToolItemDownloadMod_Click);
             // 
@@ -675,7 +684,7 @@
             this.MenuStrip.Margin = new System.Windows.Forms.Padding(0, 0, 0, 6);
             this.MenuStrip.Name = "MenuStrip";
             this.MenuStrip.Padding = new System.Windows.Forms.Padding(8, 10, 8, 0);
-            this.MenuStrip.Size = new System.Drawing.Size(1094, 29);
+            this.MenuStrip.Size = new System.Drawing.Size(1094, 34);
             this.MenuStrip.TabIndex = 1141;
             this.MenuStrip.Text = "darkMenuStrip1";
             // 
@@ -689,7 +698,7 @@
             this.MenuItemConnectOfflineMode});
             this.MenuStripFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStripFile.Name = "MenuStripFile";
-            this.MenuStripFile.Size = new System.Drawing.Size(74, 19);
+            this.MenuStripFile.Size = new System.Drawing.Size(90, 24);
             this.MenuStripFile.Text = "CONNECT";
             // 
             // MenuItemConnectPS3
@@ -701,7 +710,7 @@
             this.MenuItemConnectPS3Disconnect});
             this.MenuItemConnectPS3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemConnectPS3.Name = "MenuItemConnectPS3";
-            this.MenuItemConnectPS3.Size = new System.Drawing.Size(180, 22);
+            this.MenuItemConnectPS3.Size = new System.Drawing.Size(180, 26);
             this.MenuItemConnectPS3.Text = "PS3";
             // 
             // MenuItemConnectPS3CCAPI
@@ -709,7 +718,7 @@
             this.MenuItemConnectPS3CCAPI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemConnectPS3CCAPI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemConnectPS3CCAPI.Name = "MenuItemConnectPS3CCAPI";
-            this.MenuItemConnectPS3CCAPI.Size = new System.Drawing.Size(198, 22);
+            this.MenuItemConnectPS3CCAPI.Size = new System.Drawing.Size(241, 26);
             this.MenuItemConnectPS3CCAPI.Text = "Connect using CCAPI...";
             this.MenuItemConnectPS3CCAPI.Click += new System.EventHandler(this.MenuStripConnectPS3CCAPI_Click);
             // 
@@ -718,7 +727,7 @@
             this.MenuItemConnectPS3TMAPI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemConnectPS3TMAPI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemConnectPS3TMAPI.Name = "MenuItemConnectPS3TMAPI";
-            this.MenuItemConnectPS3TMAPI.Size = new System.Drawing.Size(198, 22);
+            this.MenuItemConnectPS3TMAPI.Size = new System.Drawing.Size(241, 26);
             this.MenuItemConnectPS3TMAPI.Text = "Connect using TMAPI...";
             this.MenuItemConnectPS3TMAPI.Click += new System.EventHandler(this.MenuStripConnectPS3TMAPI_Click);
             // 
@@ -727,7 +736,7 @@
             this.MenuItemConnectPS3Disconnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemConnectPS3Disconnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemConnectPS3Disconnect.Name = "MenuItemConnectPS3Disconnect";
-            this.MenuItemConnectPS3Disconnect.Size = new System.Drawing.Size(198, 22);
+            this.MenuItemConnectPS3Disconnect.Size = new System.Drawing.Size(241, 26);
             this.MenuItemConnectPS3Disconnect.Text = "Disconnect...";
             this.MenuItemConnectPS3Disconnect.Visible = false;
             this.MenuItemConnectPS3Disconnect.Click += new System.EventHandler(this.MenuItemPS3Disconnect_Click);
@@ -740,7 +749,7 @@
             this.MenuItemXBOXDisconnect});
             this.MenuItemConnectXBOX.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemConnectXBOX.Name = "MenuItemConnectXBOX";
-            this.MenuItemConnectXBOX.Size = new System.Drawing.Size(180, 22);
+            this.MenuItemConnectXBOX.Size = new System.Drawing.Size(180, 26);
             this.MenuItemConnectXBOX.Text = "XBOX";
             // 
             // MenuItemXBOXConnect
@@ -748,8 +757,8 @@
             this.MenuItemXBOXConnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemXBOXConnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemXBOXConnect.Name = "MenuItemXBOXConnect";
-            this.MenuItemXBOXConnect.Size = new System.Drawing.Size(180, 22);
-            this.MenuItemXBOXConnect.Text = "Connect...";
+            this.MenuItemXBOXConnect.Size = new System.Drawing.Size(279, 26);
+            this.MenuItemXBOXConnect.Text = "Connect to default console...";
             this.MenuItemXBOXConnect.Click += new System.EventHandler(this.MenuItemXBOXConnect_Click);
             // 
             // MenuItemXBOXDisconnect
@@ -757,8 +766,9 @@
             this.MenuItemXBOXDisconnect.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemXBOXDisconnect.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemXBOXDisconnect.Name = "MenuItemXBOXDisconnect";
-            this.MenuItemXBOXDisconnect.Size = new System.Drawing.Size(180, 22);
+            this.MenuItemXBOXDisconnect.Size = new System.Drawing.Size(279, 26);
             this.MenuItemXBOXDisconnect.Text = "Disconnect...";
+            this.MenuItemXBOXDisconnect.Visible = false;
             this.MenuItemXBOXDisconnect.Click += new System.EventHandler(this.MenuItemXBOXDisconnect_Click);
             // 
             // MenuItemFileSeparator0
@@ -775,7 +785,7 @@
             this.MenuItemConnectOfflineMode.CheckOnClick = true;
             this.MenuItemConnectOfflineMode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemConnectOfflineMode.Name = "MenuItemConnectOfflineMode";
-            this.MenuItemConnectOfflineMode.Size = new System.Drawing.Size(180, 22);
+            this.MenuItemConnectOfflineMode.Size = new System.Drawing.Size(180, 26);
             this.MenuItemConnectOfflineMode.Text = "Offline Mode";
             // 
             // MenuItemTools
@@ -785,7 +795,7 @@
             this.MenuItemToolsCustomInjector});
             this.MenuItemTools.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemTools.Name = "MenuItemTools";
-            this.MenuItemTools.Size = new System.Drawing.Size(54, 19);
+            this.MenuItemTools.Size = new System.Drawing.Size(67, 24);
             this.MenuItemTools.Text = "TOOLS";
             // 
             // MenuItemToolsCustomInjector
@@ -793,7 +803,7 @@
             this.MenuItemToolsCustomInjector.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemToolsCustomInjector.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemToolsCustomInjector.Name = "MenuItemToolsCustomInjector";
-            this.MenuItemToolsCustomInjector.Size = new System.Drawing.Size(180, 22);
+            this.MenuItemToolsCustomInjector.Size = new System.Drawing.Size(223, 26);
             this.MenuItemToolsCustomInjector.Text = "Custom File Injector";
             this.MenuItemToolsCustomInjector.Click += new System.EventHandler(this.MenuItemToolsCustomInjector_Click);
             // 
@@ -804,7 +814,7 @@
             this.MenuItemSettingsAlwaysDownloadInstallFiles});
             this.MenuItemSettings.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemSettings.Name = "MenuItemSettings";
-            this.MenuItemSettings.Size = new System.Drawing.Size(69, 19);
+            this.MenuItemSettings.Size = new System.Drawing.Size(88, 24);
             this.MenuItemSettings.Text = "SETTINGS";
             // 
             // MenuItemSettingsAlwaysDownloadInstallFiles
@@ -813,7 +823,7 @@
             this.MenuItemSettingsAlwaysDownloadInstallFiles.CheckOnClick = true;
             this.MenuItemSettingsAlwaysDownloadInstallFiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemSettingsAlwaysDownloadInstallFiles.Name = "MenuItemSettingsAlwaysDownloadInstallFiles";
-            this.MenuItemSettingsAlwaysDownloadInstallFiles.Size = new System.Drawing.Size(228, 22);
+            this.MenuItemSettingsAlwaysDownloadInstallFiles.Size = new System.Drawing.Size(287, 26);
             this.MenuItemSettingsAlwaysDownloadInstallFiles.Text = "Always Download Install Files";
             // 
             // MenuItemHelp
@@ -827,7 +837,7 @@
             this.MenuItemAbout});
             this.MenuItemHelp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemHelp.Name = "MenuItemHelp";
-            this.MenuItemHelp.Size = new System.Drawing.Size(47, 19);
+            this.MenuItemHelp.Size = new System.Drawing.Size(57, 24);
             this.MenuItemHelp.Text = "HELP";
             // 
             // MenuItemReportIssue
@@ -835,7 +845,7 @@
             this.MenuItemReportIssue.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemReportIssue.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemReportIssue.Name = "MenuItemReportIssue";
-            this.MenuItemReportIssue.Size = new System.Drawing.Size(212, 22);
+            this.MenuItemReportIssue.Size = new System.Drawing.Size(265, 26);
             this.MenuItemReportIssue.Text = "Report Issues/Suggestions";
             this.MenuItemReportIssue.Click += new System.EventHandler(this.MenuItemReportIssue_Click);
             // 
@@ -844,7 +854,7 @@
             this.MenuItemSourceCode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemSourceCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemSourceCode.Name = "MenuItemSourceCode";
-            this.MenuItemSourceCode.Size = new System.Drawing.Size(212, 22);
+            this.MenuItemSourceCode.Size = new System.Drawing.Size(265, 26);
             this.MenuItemSourceCode.Text = "Source Code (GitHub)";
             this.MenuItemSourceCode.Click += new System.EventHandler(this.MenuItemSourceCode_Click);
             // 
@@ -853,7 +863,7 @@
             this.MenuItemCheckForUpdates.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemCheckForUpdates.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemCheckForUpdates.Name = "MenuItemCheckForUpdates";
-            this.MenuItemCheckForUpdates.Size = new System.Drawing.Size(212, 22);
+            this.MenuItemCheckForUpdates.Size = new System.Drawing.Size(265, 26);
             this.MenuItemCheckForUpdates.Text = "Check for Update";
             this.MenuItemCheckForUpdates.Click += new System.EventHandler(this.MenuItemCheckForUpdates_Click);
             // 
@@ -863,14 +873,14 @@
             this.MenuItemSeperator3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemSeperator3.Margin = new System.Windows.Forms.Padding(0, 0, 0, 1);
             this.MenuItemSeperator3.Name = "MenuItemSeperator3";
-            this.MenuItemSeperator3.Size = new System.Drawing.Size(209, 6);
+            this.MenuItemSeperator3.Size = new System.Drawing.Size(262, 6);
             // 
             // MenuItemAbout
             // 
             this.MenuItemAbout.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemAbout.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemAbout.Name = "MenuItemAbout";
-            this.MenuItemAbout.Size = new System.Drawing.Size(212, 22);
+            this.MenuItemAbout.Size = new System.Drawing.Size(265, 26);
             this.MenuItemAbout.Text = "About AtomicX";
             this.MenuItemAbout.Click += new System.EventHandler(this.MenuItemAbout_Click);
             // 
@@ -880,7 +890,7 @@
             this.MenuItemRequestGscMods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemRequestGscMods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemRequestGscMods.Name = "MenuItemRequestGscMods";
-            this.MenuItemRequestGscMods.Size = new System.Drawing.Size(104, 19);
+            this.MenuItemRequestGscMods.Size = new System.Drawing.Size(132, 24);
             this.MenuItemRequestGscMods.Text = "REQUEST MODS";
             this.MenuItemRequestGscMods.Click += new System.EventHandler(this.MenuStripRequestGscMods_Click);
             // 
@@ -890,14 +900,15 @@
             this.MenuItemClearGscMods.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.MenuItemClearGscMods.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuItemClearGscMods.Name = "MenuItemClearGscMods";
-            this.MenuItemClearGscMods.Size = new System.Drawing.Size(116, 19);
+            this.MenuItemClearGscMods.Size = new System.Drawing.Size(144, 24);
             this.MenuItemClearGscMods.Text = "CLEAR GSC MODS";
             this.MenuItemClearGscMods.Click += new System.EventHandler(this.MenuItemClearGscMods_Click);
             // 
             // MenuStatusStrip
             // 
-            this.MenuStatusStrip.AutoSize = false;
+            this.MenuStatusStrip.AllowMerge = false;
             this.MenuStatusStrip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.MenuStatusStrip.CanOverflow = false;
             this.MenuStatusStrip.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.MenuStatusStrip.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.MenuStatusStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
@@ -908,10 +919,11 @@
             this.toolStripSeparator3,
             this.ToolStripLabelStatus,
             this.ToolStripLabelStats});
-            this.MenuStatusStrip.Location = new System.Drawing.Point(0, 571);
+            this.MenuStatusStrip.Location = new System.Drawing.Point(0, 572);
             this.MenuStatusStrip.Name = "MenuStatusStrip";
             this.MenuStatusStrip.Padding = new System.Windows.Forms.Padding(11, 0, 8, 5);
-            this.MenuStatusStrip.Size = new System.Drawing.Size(1094, 32);
+            this.MenuStatusStrip.Size = new System.Drawing.Size(1094, 31);
+            this.MenuStatusStrip.Stretch = true;
             this.MenuStatusStrip.TabIndex = 1147;
             this.MenuStatusStrip.Text = "darkToolStrip1";
             // 
@@ -920,15 +932,15 @@
             this.ToolStripLabelConnectedConsole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ToolStripLabelConnectedConsole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ToolStripLabelConnectedConsole.Name = "ToolStripLabelConnectedConsole";
-            this.ToolStripLabelConnectedConsole.Size = new System.Drawing.Size(120, 24);
-            this.ToolStripLabelConnectedConsole.Text = "Connected Console  :";
+            this.ToolStripLabelConnectedConsole.Size = new System.Drawing.Size(148, 23);
+            this.ToolStripLabelConnectedConsole.Text = "Console Connected  :";
             // 
             // ToolStripLabelConsole
             // 
             this.ToolStripLabelConsole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
             this.ToolStripLabelConsole.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ToolStripLabelConsole.Name = "ToolStripLabelConsole";
-            this.ToolStripLabelConsole.Size = new System.Drawing.Size(26, 24);
+            this.ToolStripLabelConsole.Size = new System.Drawing.Size(34, 23);
             this.ToolStripLabelConsole.Text = "Idle";
             // 
             // toolStripSeparator3
@@ -937,15 +949,18 @@
             this.toolStripSeparator3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.toolStripSeparator3.Margin = new System.Windows.Forms.Padding(0, 0, 2, 0);
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 27);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(6, 26);
             // 
             // ToolStripLabelStatus
             // 
             this.ToolStripLabelStatus.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(63)))), ((int)(((byte)(65)))));
+            this.ToolStripLabelStatus.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.ToolStripLabelStatus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ToolStripLabelStatus.Name = "ToolStripLabelStatus";
-            this.ToolStripLabelStatus.Size = new System.Drawing.Size(85, 24);
+            this.ToolStripLabelStatus.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
+            this.ToolStripLabelStatus.Size = new System.Drawing.Size(106, 23);
             this.ToolStripLabelStatus.Text = "Loading data...";
+            this.ToolStripLabelStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // ToolStripLabelStats
             // 
@@ -954,7 +969,8 @@
             this.ToolStripLabelStats.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
             this.ToolStripLabelStats.Margin = new System.Windows.Forms.Padding(0, 1, 3, 2);
             this.ToolStripLabelStats.Name = "ToolStripLabelStats";
-            this.ToolStripLabelStats.Size = new System.Drawing.Size(54, 24);
+            this.ToolStripLabelStats.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never;
+            this.ToolStripLabelStats.Size = new System.Drawing.Size(68, 23);
             this.ToolStripLabelStats.Text = "## Mods";
             // 
             // TimerNotifyOff
@@ -964,7 +980,7 @@
             // 
             // MainForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1094, 603);
             this.Controls.Add(this.MenuStatusStrip);
@@ -977,7 +993,7 @@
             this.MainMenuStrip = this.MenuStrip;
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AtomicX - Beta 2.0.0";
+            this.Text = "AtomicX - Beta v2.0.0";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             this.SectionModsLibrary.ResumeLayout(false);

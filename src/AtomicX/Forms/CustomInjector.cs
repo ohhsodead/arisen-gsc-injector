@@ -1,20 +1,8 @@
 ﻿using AtomicX.Database;
 using AtomicX.Extensions;
-using AtomicX.Properties;
 using DarkUI.Forms;
-using Newtonsoft.Json;
-using PS3Lib;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace AtomicX.Forms
@@ -46,7 +34,6 @@ namespace AtomicX.Forms
             LoadGscFilePaths("ZM");
         }
 
-
         private void ToolStripItemInjectGscFile_Click(object sender, EventArgs e)
         {
             InjectGSCFile();
@@ -57,7 +44,7 @@ namespace AtomicX.Forms
         /// </summary>
         private void InjectGSCFile()
         {
-            if (MainForm.IsInGame())
+            if (MainForm.mainForm.IsInGame())
             {
                 _ = DarkMessageBox.Show(this, "You must be in the pre-game lobby before injecting GSC files.", "Can't Inject Now", MessageBoxIcon.Exclamation);
                 return;
@@ -82,37 +69,75 @@ namespace AtomicX.Forms
             string localFile = TextBoxLocalFile.Text;
             string installPath = ComboBoxInstallPath.GetItemText(ComboBoxInstallPath.SelectedItem);
 
-            GscData.FileItem gscFileData = MainForm.GetGscFileData(gameType, installPath);
+            GscData.FileItem gscFileData = MainForm.GetGscFileData(MainForm.ConsoleType, gameType, installPath);
 
             MainForm.mainForm.LastUsedGscFiles.Add(installPath);
 
             byte[] gscFile = File.ReadAllBytes(localFile);
 
-            MainForm.PS3.Extension.WriteUInt32(gscFileData.Pointer, 0x10400000); // Overwrite script pointer 
-            MainForm.PS3.Extension.WriteBytes(0x10400000, gscFile); // Write compiled script buffer to free memory location 
+            SetStatus($"Injecting GSC file '{Path.GetFileName(localFile)}'...");
+
+            if (MainForm.ConsoleType.Equals("PS3"))
+            {
+                MainForm.PS3.Extension.WriteUInt32(gscFileData.Pointer, 0x51000000); // Overwrite script pointer 
+                MainForm.PS3.Extension.WriteBytes(0x51000000, gscFile); // Write compiled script buffer to free memory location 
+            }
+            else if (MainForm.ConsoleType.Equals("XBOX"))
+            {
+                MainForm.XboxConsole.WriteUInt32(gscFileData.Pointer, 0x40300000);
+                MainForm.XboxConsole.WriteBytes(0x40300000, gscFile);
+            }
 
             MainForm.mainForm.LastInjectedGameType = gameType;
 
-            MainForm.mainForm.NotifyMessageBO2("^2GSC File Injected", $"{Path.GetFileName(localFile)} to {installPath}", "party_ready");
+            if (MainForm.ConsoleType.Equals("PS3"))
+            {
+                MainForm.mainForm.NotifyMessageBO2("^2GSC File Injected", $"{Path.GetFileName(localFile)} to {installPath}", "party_ready");
+            }
+
             _ = DarkMessageBox.Show(this, $"Injected File: {localFile}\nTime: {DateTime.Now:H:mm:ss}", "Success", MessageBoxIcon.Information);
         }
 
+        /// <summary>
+        ///     
+        /// </summary>
+        /// <param name="gameType"></param>
         private void LoadGscFilePaths(string gameType)
         {
             ComboBoxInstallPath.Items.Clear();
 
-            if (gameType.Equals("MP"))
+            if (MainForm.ConsoleType.Equals("PS3"))
             {
-                foreach (GscData.FileItem fileItem in MainForm.GscDumpMP.Files)
+                if (gameType.Equals("MP"))
                 {
-                    ComboBoxInstallPath.Items.Add(fileItem.Name);
+                    foreach (GscData.FileItem fileItem in MainForm.GscDumpMultiplayerPS3.Files)
+                    {
+                        ComboBoxInstallPath.Items.Add(fileItem.Name);
+                    }
+                }
+                else if (gameType.Equals("ZM"))
+                {
+                    foreach (GscData.FileItem fileItem in MainForm.GscDumpZombiesPS3.Files)
+                    {
+                        ComboBoxInstallPath.Items.Add(fileItem.Name);
+                    }
                 }
             }
-            else if (gameType.Equals("ZM"))
+            else if (MainForm.ConsoleType.Equals("XBOX"))
             {
-                foreach (GscData.FileItem fileItem in MainForm.GscDumpZM.Files)
+                if (gameType.Equals("MP"))
                 {
-                    ComboBoxInstallPath.Items.Add(fileItem.Name);
+                    foreach (GscData.FileItem fileItem in MainForm.GscDumpMultiplayerXBOX.Files)
+                    {
+                        ComboBoxInstallPath.Items.Add(fileItem.Name);
+                    }
+                }
+                else if (gameType.Equals("ZM"))
+                {
+                    foreach (GscData.FileItem fileItem in MainForm.GscDumpZombiesXBOX.Files)
+                    {
+                        ComboBoxInstallPath.Items.Add(fileItem.Name);
+                    }
                 }
             }
         }
