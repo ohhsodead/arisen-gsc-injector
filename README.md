@@ -8,7 +8,7 @@ A basic server-driven Call of Duty: Black Ops II GSC injector. Supports Multipla
 
 ## Features
 * Fast, lightweight and simple to use
-* Connect using CCAPI, TMAPI or XRPC
+* Connect using CCAPI, TMAPI or XDRPC
 * Browse a large database of GSC mods
 * Complete with info, creator, version, etc.
 * Filter by name, mp/zm and mod type
