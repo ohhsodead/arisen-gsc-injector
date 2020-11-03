@@ -1,4 +1,4 @@
-<h1 align="left">AtomicX</h1>
+# AtomicX
 
 A basic server-driven Call of Duty: Black Ops II GSC injector. Supports Multiplayer & Zombies.
 
@@ -18,16 +18,14 @@ A basic server-driven Call of Duty: Black Ops II GSC injector. Supports Multipla
 ## Requirements
 * An internet connection
 * NET Framework 4.6.2
-* PlayStation 3 with MFW
+* PlayStation 3 with MFW or
+* Xbox 360 with RGH/JTAG
 
 ## Installation
 Download and run the latest version of the Windows installer, "AtomicX.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/AtomicX/releases/latest) page.
  
 ## Contributing
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
- 
-## Requesting Mods
-I know that all gsc mods aren't currently available, you can use the "REQUEST MODS" at the top of the app to create an issue with the details and they will be submitted to our database.
  
 ## Credits / Libraries
 - Appropriate Authors of all Mods
@@ -39,7 +37,7 @@ I know that all gsc mods aren't currently available, you can use the "REQUEST MO
 - [Serious (GSC Offsets Help)](https://www.youtube.com/user/anthonything)
  
 ## Disclaimer
-I can accept no responsibility for any damage you cause to your system by using this tool. Follow the instructions so you shouldn't have any issues.
+I can accept no responsibility for any damage you cause to your system by using this tool.
 
 ## License
 This project is released under the GNU General Public License v3.
