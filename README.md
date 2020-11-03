@@ -4,7 +4,7 @@ A basic server-driven Call of Duty: Black Ops II GSC injector. Supports Multipla
 
 ![Main Form](https://github.com/ohhsodead/AtomicX/blob/master/.screenshots/demo/MainForm.png?raw=true) 
 
-**Comments, ideas, suggestions?** You can contact [me](https://github.com/ohhsodead/) via [Email](mailto:bettercodes1@gmail.com).
+**Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/sqpktsCHUg).
 
 ## Features
 * Fast, lightweight and simple to use
