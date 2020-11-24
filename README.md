@@ -1,5 +1,7 @@
 # AtomicX
 
+[![GitHub Latest Release](https://img.shields.io/github/release/ohhsodead/AtomicX.svg)](https://github.com/ohhsodead/AtomicX/releases/) [![GitHub Downloads](https://img.shields.io/github/downloads/ohhsodead/AtomicX/total.svg)](https://github.com/ohhsodead/AtomicX/releases/) [![GitHub Open Issues](https://img.shields.io/github/issues/ohhsodead/AtomicX.svg)](https://gitHub.com/ohhsodead/AtomicX/issues/) [![GitHub Closed Issues](https://img.shields.io/github/issues-closed/ohhsodead/AtomicX.svg)](https://github.com/ohhsodead/AtomicX/issues?q=is%3Aissue+is%3Aclosed) [![GitHub Stargazers](https://img.shields.io/github/stars/ohhsodead/AtomicX.svg?style=social&label=Star&maxAge=2592000)](https://gitHub.com/ohhsodead/AtomicX/stargazers/)
+
 A basic server-driven Call of Duty: Black Ops II GSC injector. Supports Multiplayer & Zombies.
 
 ![Main Form](https://github.com/ohhsodead/AtomicX/blob/master/.screenshots/demo/MainForm.png?raw=true) 
