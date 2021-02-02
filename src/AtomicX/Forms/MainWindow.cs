@@ -335,15 +335,22 @@ namespace AtomicX.Forms
         {
             FilterModsName = TextBoxSearch.Text;
 
-            LoadMods(
-                FilterModsName,
-                FilterModsGameType,
-                FilterModType);
+            LoadMods(FilterModsName,
+                     FilterModsGameType,
+                     FilterModType);
         }
 
         private void ComboBoxGameType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            FilterModsGameType = ComboBoxGameType.SelectedItem.ToString();
+            switch (ComboBoxGameType.SelectedIndex)
+            {
+                case 0:
+                    FilterModsGameType = "";
+                    break;
+                default:
+                    FilterModsGameType = ComboBoxModType.SelectedItem.ToString();
+                    break;
+            }
 
             LoadMods(FilterModsName,
                      FilterModsGameType,
@@ -352,13 +359,14 @@ namespace AtomicX.Forms
 
         private void ComboBoxModType_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (ComboBoxModType.SelectedIndex == 0)
+            switch (ComboBoxModType.SelectedIndex)
             {
-                FilterModType = "";
-            }
-            else
-            {
-                FilterModType = ComboBoxModType.SelectedItem.ToString();
+                case 0:
+                    FilterModType = "";
+                    break;
+                default:
+                    FilterModType = ComboBoxModType.SelectedItem.ToString();
+                    break;
             }
 
             LoadMods(FilterModsName,
