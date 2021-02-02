@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Net;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -37,6 +38,14 @@ namespace AtomicX.Extensions
         public static Stream GetStream(string url)
         {
             return ((HttpWebResponse)GetRequest(url).GetResponse()).GetResponseStream();
+        }
+
+        [DllImport("wininet.dll")]
+        private static extern bool InternetGetConnectedState(out int Description, int ReservedValue);
+
+        public static bool IsConnectedToInternet()
+        {
+            return InternetGetConnectedState(out _, 0);
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace AtomicX.Extensions
+namespace AtomicX.Io
 {
     public static class KnownFolders
     {

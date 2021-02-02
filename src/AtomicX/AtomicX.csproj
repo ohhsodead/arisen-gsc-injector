@@ -9,7 +9,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>AtomicX</RootNamespace>
     <AssemblyName>AtomicX</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <IsWebBootstrapper>false</IsWebBootstrapper>
@@ -53,25 +53,53 @@
     <StartupObject>AtomicX.Program</StartupObject>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>Prestige Master Icon.ico</ApplicationIcon>
+    <ApplicationIcon>Resources\app-icon.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup />
   <ItemGroup>
-    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+    <Reference Include="DarkUI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Plugins\DarkUI-master\DarkUI\bin\Release\DarkUI.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Data.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v20.2, Version=20.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="JRPC">
+      <HintPath>..\References\JRPC.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.12.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>..\packages\log4net.2.0.12\lib\net45\log4net.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="PS3Lib">
-      <HintPath>..\..\lib\PS3Lib.dll</HintPath>
+    <Reference Include="PS3Lib, Version=4.5.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\References\PS3Lib.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.IO.Compression, Version=4.1.2.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\System.IO.Compression.4.3.0\lib\net46\System.IO.Compression.dll</HintPath>
     </Reference>
     <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -82,46 +110,45 @@
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="xdevkit, Version=2.0.21076.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-      <HintPath>..\..\lib\xdevkit.dll</HintPath>
-    </Reference>
-    <Reference Include="xdrpc, Version=2.0.21256.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\lib\xdrpc.dll</HintPath>
+      <HintPath>..\References\xdevkit.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database\GscData.cs" />
-    <Compile Include="Database\ModsData.cs" />
-    <Compile Include="Database\AppData.cs" />
+    <Compile Include="Constants\Urls.cs" />
+    <Compile Include="Database\DropboxData.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
+    <Compile Include="Io\Archives.cs" />
+    <Compile Include="Io\UserFolders.cs" />
+    <Compile Include="Models\GscData.cs" />
+    <Compile Include="Models\ModsData.cs" />
     <Compile Include="Database\SettingsData.cs" />
     <Compile Include="Extensions\HttpExtensions.cs" />
     <Compile Include="Extensions\ImageExtensions.cs" />
-    <Compile Include="Extensions\KnownFolders.cs" />
-    <Compile Include="Extensions\Utilities.cs" />
-    <Compile Include="Extensions\Worker.cs" />
-    <Compile Include="Extensions\XDRPCExtension.cs" />
-    <Compile Include="Forms\CustomInjector.cs">
+    <Compile Include="Io\KnownFolders.cs" />
+    <Compile Include="Extensions\UpdateExtensions.cs" />
+    <Compile Include="Extensions\WorkerExtensions.cs" />
+    <Compile Include="Forms\FileInjector.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\CustomInjector.Designer.cs">
-      <DependentUpon>CustomInjector.cs</DependentUpon>
+    <Compile Include="Forms\FileInjector.Designer.cs">
+      <DependentUpon>FileInjector.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\MainForm.cs">
+    <Compile Include="Forms\MainWindow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Forms\MainForm.Designer.cs">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <Compile Include="Forms\MainWindow.Designer.cs">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Release Data\GitHubData.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Forms\CustomInjector.resx">
-      <DependentUpon>CustomInjector.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\FileInjector.resx">
+      <DependentUpon>FileInjector.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\MainForm.resx">
-      <DependentUpon>MainForm.cs</DependentUpon>
+    <EmbeddedResource Include="Forms\MainWindow.resx">
+      <DependentUpon>MainWindow.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
@@ -159,17 +186,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Prestige Master Icon.ico" />
-    <None Include="Resources\icons8-uninstall-programs-22.png" />
-    <None Include="Resources\icons8-software-installer-22.png" />
-    <None Include="Resources\icons8-heart-outline-22.png" />
-    <None Include="Resources\icons8-download-from-the-cloud-22.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\..\..\..\Plugins\DarkUI-master\DarkUI\DarkUI.csproj">
-      <Project>{f19472f5-8c44-4c51-a8a0-b9de5f555255}</Project>
-      <Name>DarkUI</Name>
-    </ProjectReference>
+    <Content Include="Resources\app-icon.ico" />
+    <None Include="Resources\Icons\uninstall.png" />
+    <None Include="Resources\Icons\install.png" />
+    <None Include="Resources\Icons\download_from_the_cloud.png" />
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

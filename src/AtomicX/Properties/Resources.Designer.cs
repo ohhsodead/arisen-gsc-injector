@@ -63,9 +63,9 @@ namespace AtomicX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_download_from_the_cloud_22 {
+        internal static System.Drawing.Bitmap download_from_the_cloud {
             get {
-                object obj = ResourceManager.GetObject("icons8_download_from_the_cloud_22", resourceCulture);
+                object obj = ResourceManager.GetObject("download_from_the_cloud", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -73,9 +73,9 @@ namespace AtomicX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_heart_outline_22 {
+        internal static System.Drawing.Bitmap install {
             get {
-                object obj = ResourceManager.GetObject("icons8_heart_outline_22", resourceCulture);
+                object obj = ResourceManager.GetObject("install", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -83,19 +83,9 @@ namespace AtomicX.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap icons8_software_installer_22 {
+        internal static System.Drawing.Bitmap uninstall {
             get {
-                object obj = ResourceManager.GetObject("icons8_software_installer_22", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap icons8_uninstall_programs_22 {
-            get {
-                object obj = ResourceManager.GetObject("icons8_uninstall_programs_22", resourceCulture);
+                object obj = ResourceManager.GetObject("uninstall", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -4,11 +4,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AtomicX", "AtomicX\AtomicX.csproj", "{471A20D8-E259-4002-9FC8-79252BDBA6A8}"
-	ProjectSection(ProjectDependencies) = postProject
-		{F19472F5-8C44-4C51-A8A0-B9DE5F555255} = {F19472F5-8C44-4C51-A8A0-B9DE5F555255}
-	EndProjectSection
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DarkUI", "..\..\..\Plugins\DarkUI-master\DarkUI\DarkUI.csproj", "{F19472F5-8C44-4C51-A8A0-B9DE5F555255}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,14 +21,6 @@ Global
 		{471A20D8-E259-4002-9FC8-79252BDBA6A8}.Release|Any CPU.Build.0 = Release|Any CPU
 		{471A20D8-E259-4002-9FC8-79252BDBA6A8}.Release|x86.ActiveCfg = Release|Any CPU
 		{471A20D8-E259-4002-9FC8-79252BDBA6A8}.Release|x86.Build.0 = Release|Any CPU
-		{F19472F5-8C44-4C51-A8A0-B9DE5F555255}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F19472F5-8C44-4C51-A8A0-B9DE5F555255}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F19472F5-8C44-4C51-A8A0-B9DE5F555255}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{F19472F5-8C44-4C51-A8A0-B9DE5F555255}.Debug|x86.Build.0 = Debug|Any CPU
-		{F19472F5-8C44-4C51-A8A0-B9DE5F555255}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F19472F5-8C44-4C51-A8A0-B9DE5F555255}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F19472F5-8C44-4C51-A8A0-B9DE5F555255}.Release|x86.ActiveCfg = Release|Any CPU
-		{F19472F5-8C44-4C51-A8A0-B9DE5F555255}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,6 @@
 ﻿namespace AtomicX.Forms
 {
-    partial class CustomInjector
+    partial class FileInjector
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomInjector));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FileInjector));
             this.MenuStrip = new DarkUI.Controls.DarkMenuStrip();
             this.MenuItemSettings = new System.Windows.Forms.ToolStripMenuItem();
             this.MenuStatusStrip = new DarkUI.Controls.DarkToolStrip();
@@ -118,7 +118,7 @@
             this.darkSectionPanel1.Location = new System.Drawing.Point(14, 40);
             this.darkSectionPanel1.Margin = new System.Windows.Forms.Padding(5);
             this.darkSectionPanel1.Name = "darkSectionPanel1";
-            this.darkSectionPanel1.SectionHeader = "Custom GSC File";
+            this.darkSectionPanel1.SectionHeader = "GSC File Injector";
             this.darkSectionPanel1.Size = new System.Drawing.Size(459, 166);
             this.darkSectionPanel1.TabIndex = 1148;
             // 
@@ -146,7 +146,7 @@
             this.ToolStripItemInjectGscFile.Enabled = false;
             this.ToolStripItemInjectGscFile.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
             this.ToolStripItemInjectGscFile.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(220)))), ((int)(((byte)(220)))), ((int)(((byte)(220)))));
-            this.ToolStripItemInjectGscFile.Image = global::AtomicX.Properties.Resources.icons8_software_installer_22;
+            this.ToolStripItemInjectGscFile.Image = global::AtomicX.Properties.Resources.install;
             this.ToolStripItemInjectGscFile.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ToolStripItemInjectGscFile.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.ToolStripItemInjectGscFile.ImageTransparentColor = System.Drawing.Color.Magenta;
@@ -195,9 +195,9 @@
             this.LabelFilename.Location = new System.Drawing.Point(6, 82);
             this.LabelFilename.Margin = new System.Windows.Forms.Padding(3, 5, 3, 2);
             this.LabelFilename.Name = "LabelFilename";
-            this.LabelFilename.Size = new System.Drawing.Size(91, 15);
+            this.LabelFilename.Size = new System.Drawing.Size(66, 15);
             this.LabelFilename.TabIndex = 14;
-            this.LabelFilename.Text = "Inject GSC Path:";
+            this.LabelFilename.Text = "Inject Path:";
             // 
             // ComboBoxInstallPath
             // 
@@ -213,10 +213,12 @@
             // 
             this.RadioButtonMP.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RadioButtonMP.AutoSize = true;
-            this.RadioButtonMP.Location = new System.Drawing.Point(321, 11);
+            this.RadioButtonMP.Checked = true;
+            this.RadioButtonMP.Location = new System.Drawing.Point(320, 11);
             this.RadioButtonMP.Name = "RadioButtonMP";
             this.RadioButtonMP.Size = new System.Drawing.Size(85, 19);
             this.RadioButtonMP.TabIndex = 6;
+            this.RadioButtonMP.TabStop = true;
             this.RadioButtonMP.Text = "Multiplayer";
             this.RadioButtonMP.CheckedChanged += new System.EventHandler(this.RadioButtonMP_CheckedChanged);
             // 
@@ -231,7 +233,7 @@
             this.RadioButtonZM.Text = "Zombies";
             this.RadioButtonZM.CheckedChanged += new System.EventHandler(this.RadioButtonZM_CheckedChanged);
             // 
-            // CustomInjector
+            // FileInjector
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -243,14 +245,16 @@
             this.Controls.Add(this.MenuStrip);
             this.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.ForeColor = System.Drawing.Color.Gainsboro;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.MenuStrip;
-            this.Name = "CustomInjector";
+            this.MaximizeBox = false;
+            this.Name = "FileInjector";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Custom File Injector";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Text = "GSC File Injector";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FileInjector_FormClosing);
+            this.Load += new System.EventHandler(this.FileInjector_Load);
             this.MenuStrip.ResumeLayout(false);
             this.MenuStrip.PerformLayout();
             this.MenuStatusStrip.ResumeLayout(false);

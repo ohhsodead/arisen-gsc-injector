@@ -3,7 +3,7 @@ using System.ComponentModel;
 
 namespace AtomicX.Extensions
 {
-    public static class Worker
+    public static class WorkerExtensions
     {
         /// <summary>
         /// the actual method invoked here

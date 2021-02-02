@@ -1,23 +1,24 @@
 ﻿using AtomicX.Extensions;
 using AtomicX.Forms;
+using AtomicX.Io;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace AtomicX.Database
 {
     public partial class ModsData
     {
+        public DateTime LastUpdated { get; set; }
+
         public List<ModItem> Mods { get; set; }
 
         public class ModItem
         {
-            public long Id { get; set; }
+            public int Id { get; set; }
 
             public string GameType { get; set; }
 
@@ -82,17 +83,17 @@ namespace AtomicX.Database
             /// </summary>
             public void DownloadInstallFiles()
             {
-                string archivePath = GetDirectoryDownloadData();
-                string archiveFilePath = GetArchiveZipFile();
+                string archivePath = GetDownloadDataPath();
+                string archiveFilePath = GetArchiveZipFilePath();
 
-                if (!MainForm.SettingsData.AlwaysDownloadInstallFiles && File.Exists(archiveFilePath))
+                if (!MainWindow.SettingsData.AlwaysDownloadInstallFiles && File.Exists(archiveFilePath))
                 {
                     return;
                 }
 
                 if (Directory.Exists(archivePath))
                 {
-                    Utilities.DeleteDirectory(archivePath);
+                    UserFolders.DeleteDirectory(archivePath);
                 }
 
                 if (File.Exists(archiveFilePath))
@@ -100,7 +101,7 @@ namespace AtomicX.Database
                     File.Delete(archiveFilePath);
                 }
 
-                Directory.CreateDirectory(GetDirectoryDownloadData());
+                Directory.CreateDirectory(GetDownloadDataPath());
 
                 using (WebClient wc = new WebClient())
                 {
@@ -117,18 +118,19 @@ namespace AtomicX.Database
             /// <param name="localPath">Path to downloads mods archive at folder</param>
             public void DownloadArchiveAtPath(string localPath)
             {
-                string zipFileName = string.Format("{0} v{1}.zip", Name.Replace(":", ""), Version);
+                string zipFileName = StringExtensions.ReplaceInvalidChars(string.Format("{0} v{1}.zip", Name, Version));
                 string zipFilePath = Path.Combine(localPath, zipFileName);
 
-                GenerateReadMeAtPath(GetDirectoryDownloadData());
+                GenerateReadMeAtPath(GetDownloadDataPath());
 
                 using (WebClient wc = new WebClient())
                 {
                     wc.Headers.Add("Accept: application/zip");
                     wc.Headers.Add("User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; WOW64; Trident/5.0)");
                     wc.DownloadFile(new Uri(Url), zipFilePath);
-                    Utilities.AddFilesToZip(zipFilePath, new string[] { Path.Combine(GetDirectoryDownloadData(), "README.txt") });
                 }
+
+                Archives.AddFilesToZip(zipFilePath, new string[] { Path.Combine(GetDownloadDataPath(), "README.txt") });
             }
 
             /// <summary>
@@ -145,45 +147,45 @@ namespace AtomicX.Database
                 // Create contents and write them to readme file 
                 File.WriteAllLines(Path.Combine(directoryPath, "README.txt"), new string[]
                 {
-                    Id.ToString(),
-                    Name,
-                    GetGameType(),
-                    GetModType(),
-                    Version,
-                    CreatedBy,
-                    SubmittedBy,
-                    Description,
-                    string.Join(", ", InstallPaths),
-                    Url
+                    "Id: " + Id,
+                    "Name: " + Name,
+                    "Game Mode: " + GetGameType(),
+                    "Mod Type: " + GetModType(),
+                    "Version: " + Version,
+                    "Created By: " + CreatedBy,
+                    "Submitted By: " + SubmittedBy,
+                    "Description: " + Description,
+                    "Install Files: " + string.Join(", ", InstallPaths),
+                    "Download URL: " + Url
                 });
             }
 
             /// <summary>
-            ///     Gets the directory structure for extracting modded files to
+            /// Get the directory for extracting modded files to.
             /// </summary>
             /// <returns></returns>
-            public string GetDirectoryDownloadData()
-            {
-                return $@"{Utilities.AppDataPath}{GameType}\{CreatedBy}\{Name.Replace(":", "")} (v{Version})\";
-            }
+            public string GetDownloadDataPath() => $@"{UserFolders.AppModsData}{GameType}\{CreatedBy}\{StringExtensions.ReplaceInvalidChars(Name)} (#{Id})\";
 
             /// <summary>
-            ///     Gets the downloaded mods archive file path
+            /// Gets the downloaded mods archive file path.
             /// </summary>
             /// <returns>Mods Archive File Path</returns>
-            public string GetArchiveZipFile()
-            {
-                return $@"{Utilities.AppDataPath}{GameType}\{CreatedBy}\{Name.Replace(":", "")} (v{Version}) ({Id}).zip";
-            }
+            public string GetArchiveZipFilePath() => $@"{UserFolders.AppModsData}{GameType}\{CreatedBy}\{StringExtensions.ReplaceInvalidChars(Name)} (#{Id}).zip";
         }
 
+        /// <summary>
+        ///     
+        /// </summary>
         public int TotalModsMP => (from ModItem modItem in Mods
-                                     where modItem.GameType.Equals("MP")
-                                     select modItem).Count();
+                                   where modItem.GameType.Equals("MP")
+                                   select modItem).Count();
 
+        /// <summary>
+        ///     
+        /// </summary>
         public int TotalModsZM => (from ModItem modItem in Mods
-                                     where modItem.GameType.Equals("ZM")
-                                     select modItem).Count();
+                                   where modItem.GameType.Equals("ZM")
+                                   select modItem).Count();
 
         /// <summary>
         ///     Gets all of the mods for the specified gameId, with results filtered by name, firmware and type
@@ -195,9 +197,9 @@ namespace AtomicX.Database
         public List<ModItem> GetModItems(string name, string mode, string type)
         {
             return (from ModItem modItem in Mods
-                    where modItem.Name.ToLower().Contains(name.ToLower())
-                    && string.Equals(modItem.GetGameType().ToLower(), mode.ToLower())
-                    && modItem.GetModType().ToLower().Contains(type.ToLower())
+                    where modItem.Name.ToLower().Contains(name.ToLower()) &&
+                    modItem.GetGameType().ToLower().Contains(mode.ToLower()) &&
+                    modItem.GetModType().ToLower().Contains(type.ToLower())
                     select modItem).Distinct().ToList();
         }
 
@@ -206,7 +208,7 @@ namespace AtomicX.Database
         /// </summary>
         /// <param name="modId">Name of the mod</param>
         /// <returns>Mod information</returns>
-        public ModItem GetModById(long modId)
+        public ModItem GetModById(int modId)
         {
             foreach (ModItem modItem in from ModItem modItem in Mods
                                         where modItem.Id.Equals(modId)
