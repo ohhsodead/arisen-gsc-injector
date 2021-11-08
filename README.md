@@ -4,7 +4,7 @@
 
 A basic server-driven Call of Duty: Black Ops II GSC injector. Supports Multiplayer & Zombies.
 
-![Main Form](https://github.com/ohhsodead/AtomicX/blob/master/.screenshots/demo/MainForm.png?raw=true) 
+![Main Form](https://cdn.discordapp.com/attachments/884978327637590016/884979046214156298/unknown.png) 
 
 **Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/sqpktsCHUg) to get in contact with our team.
 
