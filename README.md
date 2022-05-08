@@ -24,7 +24,7 @@ A basic server-driven Call of Duty: Black Ops II GSC injector. Supports Multipla
 * Xbox 360 with RGH/JTAG
 
 ## Installation
-Download and run the latest version of the Windows installer, "AtomicX.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/Atomic/releases/latest) page.
+Download and run the latest version of the Windows installer, "Atomic.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/Atomic/releases/latest) page.
  
 ## Contributing
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
