@@ -1,6 +1,6 @@
-# Arisen GSC Studio
+# Arisen GSC Injector
 
-[![GitHub Latest Release](https://img.shields.io/github/release/ohhsodead/arisen-gsc-studio.svg)](https://github.com/ohhsodead/arisen-gsc-studio/releases/) [![GitHub Downloads](https://img.shields.io/github/downloads/ohhsodead/arisen-gsc-studio/total.svg)](https://github.com/ohhsodead/arisen-gsc-studio/releases/) [![GitHub Open Issues](https://img.shields.io/github/issues/ohhsodead/arisen-gsc-studio.svg)](https://gitHub.com/ohhsodead/arisen-gsc-studio/issues/) [![GitHub Closed Issues](https://img.shields.io/github/issues-closed/ohhsodead/arisen-gsc-studio.svg)](https://github.com/ohhsodead/arisen-gsc-studio/issues?q=is%3Aissue+is%3Aclosed) [![GitHub Stargazers](https://img.shields.io/github/stars/ohhsodead/arisen-gsc-studio.svg)](https://gitHub.com/ohhsodead/arisen-gsc-studio/stargazers/)
+[![GitHub Latest Release](https://img.shields.io/github/release/ohhsodead/arisen-gsc-injector.svg)](https://github.com/ohhsodead/arisen-gsc-injector/releases/) [![GitHub Downloads](https://img.shields.io/github/downloads/ohhsodead/arisen-gsc-injector/total.svg)](https://github.com/ohhsodead/arisen-gsc-injector/releases/) [![GitHub Open Issues](https://img.shields.io/github/issues/ohhsodead/arisen-gsc-injector.svg)](https://gitHub.com/ohhsodead/arisen-gsc-injector/issues/) [![GitHub Closed Issues](https://img.shields.io/github/issues-closed/ohhsodead/arisen-gsc-injector.svg)](https://github.com/ohhsodead/arisen-gsc-injector/issues?q=is%3Aissue+is%3Aclosed) [![GitHub Stargazers](https://img.shields.io/github/stars/ohhsodead/arisen-gsc-injector.svg?style=social&label=Star&maxAge=2592000)](https://gitHub.com/ohhsodead/arisen-gsc-injector/stargazers/)
 
 A basic server-driven Call of Duty: Black Ops II GSC injector. Supports Multiplayer & Zombies.
 
@@ -24,7 +24,7 @@ A basic server-driven Call of Duty: Black Ops II GSC injector. Supports Multipla
 * Xbox 360 with RGH/JTAG
 
 ## Installation
-Download and run the latest version of the Windows installer, "Arisen-GSC-Studio.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/arisen-gsc-studio/releases/latest) page.
+Download and run the latest version of the Windows installer, "ArisenGSCInjector.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/arisen-gsc-injector/releases/latest) page.
  
 ## Contributing
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
