@@ -2,7 +2,7 @@
 
 [![GitHub Latest Release](https://img.shields.io/github/release/ohhsodead/arisen-gsc-injector.svg)](https://github.com/ohhsodead/arisen-gsc-injector/releases/) [![GitHub Downloads](https://img.shields.io/github/downloads/ohhsodead/arisen-gsc-injector/total.svg)](https://github.com/ohhsodead/arisen-gsc-injector/releases/) [![Crowdin](https://badges.crowdin.net/arisen-gsc-injector/localized.svg)](https://crowdin.com/project/arisen-gsc-injector) [![GitHub Open Issues](https://img.shields.io/github/issues/ohhsodead/arisen-gsc-injector.svg)](https://gitHub.com/ohhsodead/arisen-gsc-injector/issues/) [![GitHub Closed Issues](https://img.shields.io/github/issues-closed/ohhsodead/arisen-gsc-injector.svg)](https://github.com/ohhsodead/arisen-gsc-injector/issues?q=is%3Aissue+is%3Aclosed) [![GitHub Stargazers](https://img.shields.io/github/stars/ohhsodead/arisen-gsc-injector.svg?style=social&label=Star&maxAge=2592000)](https://gitHub.com/ohhsodead/arisen-gsc-injector/stargazers/)
 
-A basic server-driven Call of Duty: Black Ops II GSC injector. Supports Multiplayer & Zombies.
+A basic server-driven Call of Duty: Black Ops II GSC injector. Supports Multiplayer & Zombies. Supports PlayStation 3 & Xbox 360.
 
 ![Main Form](https://cdn.discordapp.com/attachments/884978327637590016/884979046214156298/unknown.png) 
 
