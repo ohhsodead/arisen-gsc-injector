@@ -118,23 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BUTTON_DOWNLOAD" xml:space="preserve">
-    <value>Download</value>
+    <value>Baixar</value>
   </data>
   <data name="BUTTON_INSTALL" xml:space="preserve">
-    <value>Install</value>
+    <value>Instalar</value>
   </data>
   <data name="BUTTON_UNINSTALL" xml:space="preserve">
-    <value>Uninstall</value>
+    <value>Desinstalar</value>
   </data>
   <data name="HEADER_CLEAR_MODS" xml:space="preserve">
     <value>CLEAR GSC MODS</value>
     <comment>Action to clear all mods from game</comment>
   </data>
   <data name="HEADER_CONNECT" xml:space="preserve">
-    <value>CONNECT</value>
+    <value>CONECTAR</value>
   </data>
   <data name="HEADER_DESCRIPTION" xml:space="preserve">
-    <value>DESCRIPTION</value>
+    <value>DESCRIÇÃO</value>
   </data>
   <data name="HEADER_DETAILS" xml:space="preserve">
     <value>DETAILS</value>
