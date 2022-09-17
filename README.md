@@ -1,8 +1,15 @@
-# Atomic
+<h1 align="center">Arisen GSC Injector</h1>
+<p align="center">A basic server-driven Call of Duty: Black Ops II GSC injector. Supports Multiplayer & Zombies.</p>
 
-[![GitHub Latest Release](https://img.shields.io/github/release/ohhsodead/Atomic.svg)](https://github.com/ohhsodead/Atomic/releases/) [![GitHub Downloads](https://img.shields.io/github/downloads/ohhsodead/Atomic/total.svg)](https://github.com/ohhsodead/Atomic/releases/) [![GitHub Open Issues](https://img.shields.io/github/issues/ohhsodead/Atomic.svg)](https://gitHub.com/ohhsodead/Atomic/issues/) [![GitHub Closed Issues](https://img.shields.io/github/issues-closed/ohhsodead/Atomic.svg)](https://github.com/ohhsodead/Atomic/issues?q=is%3Aissue+is%3Aclosed) [![GitHub Stargazers](https://img.shields.io/github/stars/ohhsodead/Atomic.svg?style=social&label=Star&maxAge=2592000)](https://gitHub.com/ohhsodead/Atomic/stargazers/)
+<p align="center">  
+  <a href="https://github.com/ohhsodead/arisen-gsc-injector/releases/"><img src="https://img.shields.io/github/release/ohhsodead/arisen-gsc-injector.svg" /></a>
+  <a href="https://github.com/ohhsodead/arisen-gsc-injector/releases/"><img src="https://img.shields.io/github/downloads/ohhsodead/arisen-gsc-injector/total.svg" /></a>
+  <a href="https://crowdin.com/project/arisenstudio"><img src="https://badges.crowdin.net/arisenstudio/localized.svg"></a>
+  <a href="https://gitHub.com/ohhsodead/arisen-gsc-injector/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/arisen-gsc-injector.svg" /></a>
+  <a href="https://github.com/ohhsodead/arisen-gsc-injector/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/arisen-gsc-injector.svg" /></a>
+    <a href="https://twitter.com/arisenstudio"><img src="https://img.shields.io/badge/Twitter-1da1f2?logo=twitter&logoColor=white" alt="
+</p>
 
-A basic server-driven Call of Duty: Black Ops II GSC injector. Supports Multiplayer & Zombies.
 
 ![Main Form](https://cdn.discordapp.com/attachments/884978327637590016/884979046214156298/unknown.png) 
 
