@@ -3,17 +3,18 @@
 
 <p align="center">  
   <a href="https://github.com/ohhsodead/arisen-gsc-injector/releases/"><img src="https://img.shields.io/github/release/ohhsodead/arisen-gsc-injector.svg" /></a>
-  <a href="https://github.com/ohhsodead/arisen-gsc-injector/releases/"><img src="https://img.shields.io/github/downloads/ohhsodead/arisen-gsc-injector/total.svg" /></a>
+  <a href="https://github.com/ohhsodead/Arisen-gsc-injector/releases/"><img src="https://img.shields.io/github/downloads/ohhsodead/arisen-gsc-injector/total.svg" /></a>
   <a href="https://crowdin.com/project/arisenstudio"><img src="https://badges.crowdin.net/arisenstudio/localized.svg"></a>
   <a href="https://gitHub.com/ohhsodead/arisen-gsc-injector/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/arisen-gsc-injector.svg" /></a>
   <a href="https://github.com/ohhsodead/arisen-gsc-injector/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/arisen-gsc-injector.svg" /></a>
-    <a href="https://twitter.com/arisenstudio"><img src="https://img.shields.io/badge/Twitter-1da1f2?logo=twitter&logoColor=white" alt="
+  </br>
+  <a href="https://sourceforge.net/projects/atomicx/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
+  <a href="https://discord.gg/h22szNhF7V"><img src="https://img.shields.io/badge/Discord-7389D8?logo=Discord&logoColor=white" /></a>
 </p>
+  
+![Main Form](https://raw.githubusercontent.com/ohhsodead/arisen-gsc-injector/main/.screenshots/demo/MainForm.png?raw=true)
 
-
-![Main Form](https://cdn.discordapp.com/attachments/884978327637590016/884979046214156298/unknown.png) 
-
-**Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/sqpktsCHUg) to get in contact with our team.
+**Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/h22szNhF7V) to get in contact with our team.
 
 ## Features
 * Fast, lightweight and simple to use
