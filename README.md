@@ -4,7 +4,7 @@
 <p align="center">  
   <a href="https://github.com/ohhsodead/arisen-gsc-injector/releases/"><img src="https://img.shields.io/github/release/ohhsodead/arisen-gsc-injector.svg" /></a>
   <a href="https://github.com/ohhsodead/Arisen-gsc-injector/releases/"><img src="https://img.shields.io/github/downloads/ohhsodead/arisen-gsc-injector/total.svg" /></a>
-  <a href="https://crowdin.com/project/arisenstudio"><img src="https://badges.crowdin.net/arisenstudio/localized.svg"></a>
+  <a href="https://crowdin.com/project/arisen-gsc-injector"><img src="https://badges.crowdin.net/arisen-gsc-injector/localized.svg"></a>
   <a href="https://gitHub.com/ohhsodead/arisen-gsc-injector/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/arisen-gsc-injector.svg" /></a>
   <a href="https://github.com/ohhsodead/arisen-gsc-injector/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/arisen-gsc-injector.svg" /></a>
   </br>
@@ -16,9 +16,11 @@
 
 **Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/h22szNhF7V) to get in contact with our team.
 
+Liking this tool? Take a look at my newest and biggest project [Arisen Studio](https://github.com/ohhsodead/arisen-studio)
+
 ## Features
 * Fast, lightweight and simple to use
-* Connect using CCAPI, TMAPI or XDRPC
+* Connect using CCAPI, TMAPI, PS3MAPI orXDRPC
 * Browse a large database of GSC mods
 * Complete with info, creator, version, etc.
 * Filter by name, mp/zm and mod type
@@ -32,7 +34,7 @@
 * Xbox 360 with RGH/JTAG
 
 ## Installation
-Download and run the latest version of the Windows installer, "Atomic.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/Atomic/releases/latest) page.
+Download and run the latest version of the Windows installer, "ArisenInjector.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/arisen-gsc-injector/releases/latest) page.
  
 ## Contributing
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
