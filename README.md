@@ -12,7 +12,7 @@
   <a href="https://discord.gg/h22szNhF7V"><img src="https://img.shields.io/badge/Discord-7389D8?logo=Discord&logoColor=white" /></a>
 </p>
   
-![Main Form](https://raw.githubusercontent.com/ohhsodead/arisen-gsc-injector/main/.screenshots/demo/MainForm.png?raw=true)
+![Main Form](https://raw.githubusercontent.com/ohhsodead/arisen-gsc-injector/main/.screenshots/MainForm.png?raw=true)
 
 **Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/h22szNhF7V) to get in contact with our team.
 
