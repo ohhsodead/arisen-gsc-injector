@@ -1,0 +1,3 @@
+files:
+  - source: /src/Arisen GSC Injector/Languages/en_US.resx
+    translation: /src/Arisen GSC Injector/Languages/%locale_with_underscore%.%file_extension%
