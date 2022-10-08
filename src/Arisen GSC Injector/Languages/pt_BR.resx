@@ -118,86 +118,86 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BUTTON_DOWNLOAD" xml:space="preserve">
-    <value>Download</value>
+    <value>Baixar</value>
   </data>
   <data name="BUTTON_INSTALL" xml:space="preserve">
-    <value>Install</value>
+    <value>Instalar</value>
   </data>
   <data name="BUTTON_UNINSTALL" xml:space="preserve">
-    <value>Uninstall</value>
+    <value>Desinstalar</value>
   </data>
   <data name="HEADER_CLEAR_MODS" xml:space="preserve">
-    <value>CLEAR GSC MODS</value>
+    <value>REMOVER MODS GSC</value>
     <comment>Action to clear all mods from game</comment>
   </data>
   <data name="HEADER_CONNECT" xml:space="preserve">
-    <value>CONNECT</value>
+    <value>CONECTAR</value>
   </data>
   <data name="HEADER_DESCRIPTION" xml:space="preserve">
-    <value>DESCRIPTION</value>
+    <value>DESCRIÇÃO</value>
   </data>
   <data name="HEADER_DETAILS" xml:space="preserve">
-    <value>DETAILS</value>
+    <value>DETALHES</value>
   </data>
   <data name="HEADER_GAME_TYPE" xml:space="preserve">
-    <value>GAME TYPE</value>
+    <value>MODO DE JOGO</value>
   </data>
   <data name="HEADER_HELP" xml:space="preserve">
-    <value>HELP</value>
+    <value>AJUDA</value>
   </data>
   <data name="HEADER_INFORMATION" xml:space="preserve">
-    <value>INFORMATION</value>
+    <value>INFORMAÇÕES</value>
   </data>
   <data name="HEADER_LIBRARY" xml:space="preserve">
-    <value>LIBRARY</value>
+    <value>BIBLIOTECA</value>
   </data>
   <data name="HEADER_MOD_NAME" xml:space="preserve">
-    <value>MOD NAME</value>
+    <value>NOME DO MOD</value>
   </data>
   <data name="HEADER_MOD_TYPE" xml:space="preserve">
-    <value>MOD TYPE</value>
+    <value>TIPO DE MOD</value>
   </data>
   <data name="HEADER_SETTINGS" xml:space="preserve">
-    <value>SETTINGS</value>
+    <value>CONFIGURAÇÕES</value>
   </data>
   <data name="HEADER_TOOLS" xml:space="preserve">
-    <value>TOOLS</value>
+    <value>FERRAMENTAS</value>
   </data>
   <data name="LABEL_ABOUT" xml:space="preserve">
-    <value>About</value>
+    <value>Sobre</value>
   </data>
   <data name="LABEL_CHECK_UPDATES" xml:space="preserve">
-    <value>Check For Update</value>
+    <value>Verificar atualização</value>
   </data>
   <data name="LABEL_CONNECTED_CONSOLE" xml:space="preserve">
-    <value>Connected Console</value>
+    <value>Console conectado</value>
   </data>
   <data name="LABEL_CREATED_BY" xml:space="preserve">
-    <value>Created By</value>
+    <value>Criado por</value>
   </data>
   <data name="LABEL_FILE_INJECTOR" xml:space="preserve">
-    <value>File Injector</value>
+    <value>Injetor de arquivos</value>
     <comment>Action to open a "file injector" dialog</comment>
   </data>
   <data name="LABEL_GAME_TYPE" xml:space="preserve">
-    <value>Game Type</value>
+    <value>Modo de jogo</value>
   </data>
   <data name="LABEL_MOD_TYPE" xml:space="preserve">
-    <value>Mod Type</value>
+    <value>Tipo de mod</value>
   </data>
   <data name="LABEL_NAME" xml:space="preserve">
-    <value>Name</value>
+    <value>Nome</value>
   </data>
   <data name="LABEL_REPORT_ISSUE" xml:space="preserve">
-    <value>Report Issue</value>
+    <value>Relatar problema</value>
   </data>
   <data name="LABEL_STATUS" xml:space="preserve">
     <value>Status</value>
   </data>
   <data name="LABEL_SUBMITTED_BY" xml:space="preserve">
-    <value>Submitted By</value>
+    <value>Enviado por</value>
   </data>
   <data name="LABEL_VERSION" xml:space="preserve">
-    <value>Version</value>
+    <value>Versão</value>
   </data>
 </root>
