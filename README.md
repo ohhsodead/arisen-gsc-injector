@@ -4,7 +4,7 @@
 <p align="center">  
   <a href="https://github.com/ohhsodead/arisen-gsc-injector/releases/"><img src="https://img.shields.io/github/release/ohhsodead/arisen-gsc-injector.svg" /></a>
   <a href="https://github.com/ohhsodead/Arisen-gsc-injector/releases/"><img src="https://img.shields.io/github/downloads/ohhsodead/arisen-gsc-injector/total.svg" /></a>
-  <a href="https://crowdin.com/project/arisen-gsc-injector"><img src="https://badges.crowdin.net/arisen-gsc-injector/localized.svg"></a>
+  <a href="https://crowdin.com/project/arisen-gsc-injector" target="_blank"><img src="https://badges.crowdin.net/arisen-gsc-injector/localized.svg"></a>
   <a href="https://gitHub.com/ohhsodead/arisen-gsc-injector/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/arisen-gsc-injector.svg" /></a>
   <a href="https://github.com/ohhsodead/arisen-gsc-injector/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/arisen-gsc-injector.svg" /></a>
   </br>
