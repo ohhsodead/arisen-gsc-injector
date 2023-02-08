@@ -20,7 +20,7 @@ Liking this tool? Take a look at my newest and biggest project [Arisen Studio](h
 
 ## Features
 * Fast, lightweight and simple to use
-* Connect using CCAPI, TMAPI, PS3MAPI orXDRPC
+* Connect using CCAPI, TMAPI, PS3MAPI or XDRPC
 * Browse a large database of GSC mods
 * Complete with info, creator, version, etc.
 * Filter by name, mp/zm and mod type
