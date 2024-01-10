@@ -118,86 +118,86 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BUTTON_DOWNLOAD" xml:space="preserve">
-    <value>Download</value>
+    <value>下载</value>
   </data>
   <data name="BUTTON_INSTALL" xml:space="preserve">
-    <value>Install</value>
+    <value>安装</value>
   </data>
   <data name="BUTTON_UNINSTALL" xml:space="preserve">
-    <value>Uninstall</value>
+    <value>卸载</value>
   </data>
   <data name="HEADER_CLEAR_MODS" xml:space="preserve">
-    <value>CLEAR GSC MODS</value>
+    <value>清除GSC MODS</value>
     <comment>Action to clear all mods from game</comment>
   </data>
   <data name="HEADER_CONNECT" xml:space="preserve">
-    <value>CONNECT</value>
+    <value>连接</value>
   </data>
   <data name="HEADER_DESCRIPTION" xml:space="preserve">
-    <value>DESCRIPTION</value>
+    <value>说明</value>
   </data>
   <data name="HEADER_DETAILS" xml:space="preserve">
-    <value>DETAILS</value>
+    <value>细节</value>
   </data>
   <data name="HEADER_GAME_TYPE" xml:space="preserve">
-    <value>GAME TYPE</value>
+    <value>游戏类型</value>
   </data>
   <data name="HEADER_HELP" xml:space="preserve">
-    <value>HELP</value>
+    <value>帮助</value>
   </data>
   <data name="HEADER_INFORMATION" xml:space="preserve">
-    <value>INFORMATION</value>
+    <value>情报</value>
   </data>
   <data name="HEADER_LIBRARY" xml:space="preserve">
-    <value>LIBRARY</value>
+    <value>文库</value>
   </data>
   <data name="HEADER_MOD_NAME" xml:space="preserve">
-    <value>MOD NAME</value>
+    <value>模组名称</value>
   </data>
   <data name="HEADER_MOD_TYPE" xml:space="preserve">
-    <value>MOD TYPE</value>
+    <value>模组类型</value>
   </data>
   <data name="HEADER_SETTINGS" xml:space="preserve">
-    <value>SETTINGS</value>
+    <value>设置</value>
   </data>
   <data name="HEADER_TOOLS" xml:space="preserve">
-    <value>TOOLS</value>
+    <value>工具</value>
   </data>
   <data name="LABEL_ABOUT" xml:space="preserve">
-    <value>About</value>
+    <value>关于</value>
   </data>
   <data name="LABEL_CHECK_UPDATES" xml:space="preserve">
-    <value>Check For Update</value>
+    <value>检查更新</value>
   </data>
   <data name="LABEL_CONNECTED_CONSOLE" xml:space="preserve">
-    <value>Connected Console</value>
+    <value>已连接的控制器</value>
   </data>
   <data name="LABEL_CREATED_BY" xml:space="preserve">
-    <value>Created By</value>
+    <value>创建自</value>
   </data>
   <data name="LABEL_FILE_INJECTOR" xml:space="preserve">
-    <value>File Injector</value>
+    <value>文件注入器</value>
     <comment>Action to open a "file injector" dialog</comment>
   </data>
   <data name="LABEL_GAME_TYPE" xml:space="preserve">
-    <value>Game Type</value>
+    <value>游戏类型</value>
   </data>
   <data name="LABEL_MOD_TYPE" xml:space="preserve">
-    <value>Mod Type</value>
+    <value>模组类型</value>
   </data>
   <data name="LABEL_NAME" xml:space="preserve">
-    <value>Name</value>
+    <value>名称</value>
   </data>
   <data name="LABEL_REPORT_ISSUE" xml:space="preserve">
-    <value>Report Issue</value>
+    <value>反馈问题</value>
   </data>
   <data name="LABEL_STATUS" xml:space="preserve">
-    <value>Status</value>
+    <value>状态</value>
   </data>
   <data name="LABEL_SUBMITTED_BY" xml:space="preserve">
-    <value>Submitted By</value>
+    <value>提交者</value>
   </data>
   <data name="LABEL_VERSION" xml:space="preserve">
-    <value>Version</value>
+    <value>版本</value>
   </data>
 </root>
