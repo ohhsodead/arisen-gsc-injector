@@ -118,86 +118,86 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="BUTTON_DOWNLOAD" xml:space="preserve">
-    <value>Download</value>
+    <value>İndir</value>
   </data>
   <data name="BUTTON_INSTALL" xml:space="preserve">
-    <value>Install</value>
+    <value>Kur</value>
   </data>
   <data name="BUTTON_UNINSTALL" xml:space="preserve">
-    <value>Uninstall</value>
+    <value>Kaldır</value>
   </data>
   <data name="HEADER_CLEAR_MODS" xml:space="preserve">
-    <value>CLEAR GSC MODS</value>
+    <value>GSC MODLARI TEMİZLE</value>
     <comment>Action to clear all mods from game</comment>
   </data>
   <data name="HEADER_CONNECT" xml:space="preserve">
-    <value>CONNECT</value>
+    <value>BAĞLAN</value>
   </data>
   <data name="HEADER_DESCRIPTION" xml:space="preserve">
-    <value>DESCRIPTION</value>
+    <value>TANIM</value>
   </data>
   <data name="HEADER_DETAILS" xml:space="preserve">
-    <value>DETAILS</value>
+    <value>AYRINTILAR</value>
   </data>
   <data name="HEADER_GAME_TYPE" xml:space="preserve">
-    <value>GAME TYPE</value>
+    <value>OYUN TÜRÜ</value>
   </data>
   <data name="HEADER_HELP" xml:space="preserve">
-    <value>HELP</value>
+    <value>YARDIM</value>
   </data>
   <data name="HEADER_INFORMATION" xml:space="preserve">
-    <value>INFORMATION</value>
+    <value>BİLGİ</value>
   </data>
   <data name="HEADER_LIBRARY" xml:space="preserve">
-    <value>LIBRARY</value>
+    <value>KÜTÜPHANE</value>
   </data>
   <data name="HEADER_MOD_NAME" xml:space="preserve">
-    <value>MOD NAME</value>
+    <value>MOD ADI</value>
   </data>
   <data name="HEADER_MOD_TYPE" xml:space="preserve">
-    <value>MOD TYPE</value>
+    <value>MOD TÜRÜ</value>
   </data>
   <data name="HEADER_SETTINGS" xml:space="preserve">
-    <value>SETTINGS</value>
+    <value>AYARLAR</value>
   </data>
   <data name="HEADER_TOOLS" xml:space="preserve">
-    <value>TOOLS</value>
+    <value>ARAÇLAR</value>
   </data>
   <data name="LABEL_ABOUT" xml:space="preserve">
-    <value>About</value>
+    <value>Hakkında</value>
   </data>
   <data name="LABEL_CHECK_UPDATES" xml:space="preserve">
-    <value>Check For Update</value>
+    <value>Güncellemeleri Denetle</value>
   </data>
   <data name="LABEL_CONNECTED_CONSOLE" xml:space="preserve">
-    <value>Connected Console</value>
+    <value>Konsola Bağlan</value>
   </data>
   <data name="LABEL_CREATED_BY" xml:space="preserve">
-    <value>Created By</value>
+    <value>Oluşturan</value>
   </data>
   <data name="LABEL_FILE_INJECTOR" xml:space="preserve">
-    <value>File Injector</value>
+    <value>Dosya Enjektörü</value>
     <comment>Action to open a "file injector" dialog</comment>
   </data>
   <data name="LABEL_GAME_TYPE" xml:space="preserve">
-    <value>Game Type</value>
+    <value>Oyun Türü</value>
   </data>
   <data name="LABEL_MOD_TYPE" xml:space="preserve">
-    <value>Mod Type</value>
+    <value>Mod Türü</value>
   </data>
   <data name="LABEL_NAME" xml:space="preserve">
-    <value>Name</value>
+    <value>İsim</value>
   </data>
   <data name="LABEL_REPORT_ISSUE" xml:space="preserve">
-    <value>Report Issue</value>
+    <value>Sorun Bildir</value>
   </data>
   <data name="LABEL_STATUS" xml:space="preserve">
-    <value>Status</value>
+    <value>Durum</value>
   </data>
   <data name="LABEL_SUBMITTED_BY" xml:space="preserve">
-    <value>Submitted By</value>
+    <value>Ekleyen</value>
   </data>
   <data name="LABEL_VERSION" xml:space="preserve">
-    <value>Version</value>
+    <value>Sürüm</value>
   </data>
 </root>
