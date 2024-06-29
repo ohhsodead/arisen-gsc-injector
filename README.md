@@ -8,13 +8,13 @@
   <a href="https://gitHub.com/ohhsodead/arisen-gsc-injector/issues/"><img src="https://img.shields.io/github/issues/ohhsodead/arisen-gsc-injector.svg" /></a>
   <a href="https://github.com/ohhsodead/arisen-gsc-injector/issues?q=is%3Aissue+is%3Aclosed"><img src="https://img.shields.io/github/issues-closed/ohhsodead/arisen-gsc-injector.svg" /></a>
   </br>
-  <a href="https://sourceforge.net/projects/atomicx/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
-  <a href="https://discord.gg/h22szNhF7V"><img src="https://img.shields.io/badge/Discord-7389D8?logo=Discord&logoColor=white" /></a>
+  <a href="https://sourceforge.net/projects/arisengscinjector/"><img src="https://img.shields.io/badge/SourceForge-ff6600?logo=sourceforge&logoColor=white" /></a>
+  <a href="https://discord.gg/FTCS3Xu"><img src="https://img.shields.io/badge/Discord-7389D8?logo=Discord&logoColor=white" /></a>
 </p>
   
 ![Main Form](https://raw.githubusercontent.com/ohhsodead/arisen-gsc-injector/main/.screenshots/MainForm.png?raw=true)
 
-**Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/h22szNhF7V) to get in contact with our team.
+**Comments, ideas, suggestions?** Join the [Discord Server](https://discord.gg/FTCS3Xu) to get in contact with our team.
 
 Liking this tool? Take a look at my newest and biggest project [Arisen Studio](https://github.com/ohhsodead/arisen-studio)
 
@@ -34,7 +34,7 @@ Liking this tool? Take a look at my newest and biggest project [Arisen Studio](h
 * Xbox 360 with RGH/JTAG
 
 ## Installation
-Download and run the latest version of the Windows installer, "ArisenInjector.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/arisen-gsc-injector/releases/latest) page.
+Download and run the latest version of the Windows installer, "ArisenGscInjector.Installer.Windows.exe" from the [releases](https://github.com/ohhsodead/arisen-gsc-injector/releases/latest) page.
  
 ## Contributing
 You're also welcome to submit any pull requests with fixes and suggestions, like additional features for making this project even more great. Please open an issue so we can discuss things before going further, maybe we can work on this together!
