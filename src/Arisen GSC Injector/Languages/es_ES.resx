@@ -167,7 +167,7 @@
     <value>Acerca de</value>
   </data>
   <data name="LABEL_CHECK_UPDATES" xml:space="preserve">
-    <value>Comprobar por actualización</value>
+    <value>Buscar actualizaciones</value>
   </data>
   <data name="LABEL_CONNECTED_CONSOLE" xml:space="preserve">
     <value>Consola conectada</value>
