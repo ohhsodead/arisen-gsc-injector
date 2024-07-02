@@ -1,0 +1,91 @@
+---
+name: Mod Request
+description: Request a mod to be added to the database
+title: "[Request]: "
+labels:
+  - "mod request"
+
+body:
+  - type: input
+    attributes:
+      label: Name
+      description: |
+        Please provide the name as accurate as possible. If it's mod menu then use the menu's name, same for a game mode
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Description
+      description: |
+        Enter some description, such as useful details, main features, what is it and how it works.
+    validations:
+      required: true
+      
+  - type: input
+    attributes:
+      label: Version
+      description: |
+        If there's multiple versions then tell us what this one is, otherwise leave blank.
+    validations:
+      required: false
+
+  - type: dropdown
+    attributes:
+      label: What game?
+      description: |
+        Choose which game title the supports.
+      multiple: false
+      options:
+        - Black Ops 1
+        - Black Ops 2
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Which mode?
+      description: |
+        Choose which mode you need to play this.
+      multiple: false
+      options:
+        - Multiplayer
+        - Zombies
+    validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: What mod type?
+      description: |
+        Choose what type it is, standard menu or a type of game mode.
+      multiple: false
+      options:
+        - Mod Menu
+        - Game Mode
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Created By
+      description: |
+        Let us know who made this so we can give appropriate credits.
+    validations:
+      required: true
+      
+  - type: input
+    attributes:
+      label: Submitted By
+      description: |
+        Enter your name here so we can show that you contributed to the database.
+    validations:
+      required: false
+
+  - type: textarea
+    attributes:
+      label: Additional Context
+      description: |
+        Enter one or more sources from either a forum post, youtube video, or anywhere that contains a download or other details
+    validations:
+      required: true
